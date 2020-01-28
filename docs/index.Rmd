@@ -39,4 +39,4 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", message=FALSE, warning
 
 ```
 
-- Apresentação feita com [Xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado.
+- Apresentação feita com [Xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado por [Bea Milz](https://beatrizmilz.com).
