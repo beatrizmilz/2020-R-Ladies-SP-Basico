@@ -1,0 +1,41 @@
+---
+title: "<center><img src= 'img/allisonhorst/community1.jpg' width = '30%' alt='Author: Allison Horst'></br><p>Imagem por <a href='https://twitter.com/allison_horst' target=_blank>@allison_horst</a></p></center> "
+subtitle: "R-Ladies São Paulo <BR> Curso Básico de R"
+author: "08/02/2020"
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, "css/metropolis.css", "css/metropolis-fonts.css", "css/footer.css"]
+    includes:
+      after_body: insert-logo.html
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+# Para exportar em PDF: pagedown::chrome_print("docs/index.html")
+---
+layout: true
+  
+<div class="my-footer"><span>
+
+
+<a href="https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo">Meetup</a> |
+<a href="https://twitter.com/RLadiesSaoPaulo">Twitter</a> | 
+<a href="http://instagram.com/RLadiesSaoPaulo">Instagram</a> |
+<a href="http://facebook.com/RLadiesSaoPaulo">Facebook</a> |
+<a href="https://github.com/rladies/meetup-presentations_sao-paulo">Github</a> |
+<a href="http://bit.ly/...">bit.ly/...</a>
+
+
+</span></div> 
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", message=FALSE, warning=FALSE)
+
+```
+
+- Apresentação feita com [Xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado.
