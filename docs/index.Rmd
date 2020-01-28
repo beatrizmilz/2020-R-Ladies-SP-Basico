@@ -31,6 +31,7 @@ layout: true
 
 </span></div> 
 ---
+class:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -1426,10 +1427,664 @@ Relação de pacotes encontrados no CRAN por áreas de interesse.
 knitr::include_graphics("img/cran_task_view.png")
 ```
 
+---
+class:    
+
+# Cronograma da tarde
+
+- O pacote tidyverse
+
+- Importando arquivos
+
+- Manipulação de dados com o pacote dplyr
+
+
+---
+class: center, middle
+
+## Tidyverse
+
+---
+class:
+
+# O Tidyverse
+
+É uma coleção de pacotes R projetados para a ciência de dados. Todos os pacotes compartilham uma mesma filosofia de desenvolvimento, sintaxe e estruturas de dados.
+
+```{r echo=FALSE, fig.align='center', out.width="90%"}
+knitr::include_graphics("img/Tidyverse_packages.png")
+```
+
+---
+class:
+
+
+# Pacotes do Tidyverse
+
+- **ggplot2**: cria gráficos <br></br>
+- **dplyr**: manipulação de dados <br></br>
+- **tidyr**: arruma os dados <br></br>
+- **readr**: leitura dos dados <br></br>
+- **purrr**: ferramentas para programação funcional, trabalha com funções e vetores <br></br>
+- **tibble**: dataframes moderno, mais simples de manipular <br></br>
+- **magrittr**: facilita a escrita e leitura do código <br></br>
+- **stringr**: trabalha com strings <br></br>
+- **forcats**: trabalha com fatores <br></br>
+- **lubridate**: trabalha com datas
 
 
 
+---
+class:
 
+
+# O operador %>%, o Pipe
+
+Imagine uma receita que tenha as instruções: junte os ingredientes, misture e leve ao forno. Na forma usual do R, essas instruções provavelmente seriam assim:
+
+
+**forno(misture(junte(ingredientes)))**
+
+
+Dessa forma temos que pensar “de dentro para fora”. O primeiro comando que lemos é forno, sendo que essa é a última operação que será realizada.
+
+Com o operador pipe seria algo assim:
+
+
+**ingredientes %>% junte %>% misture %>% forno**
+
+
+É mais intuitivo!
+  
+---
+class:
+
+
+# O operador %>%, o Pipe
+
+Para ficar mais fácil: pense no Pipe %>% como um operador que efetua as operações à direita nos valores que estão à esquerda.
+
+Ou ainda, o operador %>%  passa o que está à esquerda como argumento para a operação da direita.
+
+**Atalho**: CTRL + SHIFT + M
+
+---
+class:    
+
+# Dataframes  - Tidy data
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/tidy-1.png")
+```
+
+Fonte: [Data Science with R by Garrett Grolemund](http://garrettgman.github.io/tidying/)
+
+---
+class:
+
+
+# Importação de arquivos
+
+Pacote **readr**: funções para ler arquivos texto
+- read_csv
+- read_csv2
+- read_delim
+- read_log
+- read_rds
+
+Pacote **readxl**: função para ler arquivo Excel  
+- read_excel
+
+Pacote **haven**: funções para ler outros softwares estatísticos
+
+- read_sas
+- read_spss
+- read_stata
+
+---
+class:
+
+
+# E lá vamos nós!
+
+<center><img src="img/S5e27_T.V._typing.gif"></center> 
+
+---
+class:
+
+
+# Instruções
+
+- Abrir o RStudio da sua máquina <br></br>
+
+- Fazer o download do repositório: https://github.com/MaryMS/2019-02-R-Basics-R-LadiesSP <br></br>
+
+- Descompactar na pasta Documentos <br></br>
+
+- Abrir o arquivo oficina_R_basico.Rproj <br></br>
+
+- Abrir um novo R script (file -> new file -> R script)
+
+---
+class:
+
+
+# Importação de arquivos
+
+```{r, message=FALSE}
+library(tidyverse)
+
+# Uma outra opção é carregar somente o(s) pacote(s) que irá utilizar.
+library(dplyr)
+
+# Importa o arquivo csv para o objeto df_titanic
+df_titanic <- read_csv("data/titanic.csv")
+
+```
+
+---
+class:
+
+
+# View e glimpse
+
+- Para visualizar um objeto: **View**(nome-do-objeto)
+
+- **glimpse()**: mostra informações como o número de observações (linhas) e variáveis (colunas), o nome das colunas, o tipo delas e os primeiros dados de cada coluna.
+
+```{r}
+df_titanic %>% glimpse()
+```
+
+
+
+---
+class:
+
+
+# dplyr
+
+A ideia do pacote **dplyr** é tornar a manipulação de dados explícita utilizando verbos que indicam a ação a ser realizada. 
+
+O encadeamento dos verbos com o banco de dados é realizado com o operador **pipe**: **%>%**
+
+O dplyr foi desenhado para trabalhar com o operator pipe **%>%** do pacote magritrr.
+
+---
+class:
+
+# Os 6 verbos do dplyr 
+
+- **filter**(): seleciona linhas <br></br>
+- **arrange**(): ordena de acordo com uma ou mais colunas <br></br>
+- **select**(): seleciona colunas <br></br>
+- **mutate**(): cria/modifica colunas <br></br>
+- **summarise**(): sumariza/agrega colunas <br></br>
+- **group_by**(): agrupa colunas
+
+
+---
+class:
+
+
+# filter
+
+Selecionar linhas da base de dados.
+
+OBS: **Tibble** é uma releitura moderna do data.frame.
+
+```{r}
+df_titanic %>% filter(sobreviveu == "sim") # Seleciona os sobreviventes.
+```
+
+
+
+---
+class:
+
+
+# filter
+
+```{r, message=FALSE}
+# Cria um objeto e atribui a ele as linhas com os sobreviventes.
+sobreviventes <- df_titanic %>% filter(sobreviveu == "sim")
+
+
+
+# Crianças com menos de 12 anos que sobreviveram.
+criancas_sobreviventes <- df_titanic %>% filter(sobreviveu == "sim" & idade < 12)
+
+
+
+# Embarque realizado nos locais: Southampton ou Queenstow.
+embarque <- df_titanic %>% filter(embarque == "Southampton" |
+                                  embarque == "Queenstow")
+      
+                                                                
+
+# A instrução acima pode ser reescrita com o operador %in%:
+embarque <- df_titanic %>% filter(embarque %in% c("Southampton", "Queenstow"))
+
+```
+
+---
+class:
+
+
+# filter
+
+```{r, message=FALSE}
+# Pessoas sem informação de local de embarque.
+# is.na() - função que retorna TRUE se o valor for NA e FALSE se não for.
+sem_embarque <- df_titanic %>% filter(is.na(embarque))
+
+
+
+# Pessoas que tem "Elizabeth" em qualquer posição do campo nome.
+# str_detect - função que retorna TRUE se detectou o valor dado e 
+# FALSE, caso não tenha encontrado.
+nome <- df_titanic %>% filter(str_detect(nome, "Elizabeth"))
+```
+
+---
+class:
+
+
+# Desafio 1
+
+1) Criar um objeto chamado passageiras que seleciona somente as passageiras.
+
+2) Criar um objeto chamado criancas_Cherbourg que seleciona as crianças com menos de 12 anos que embarcaram na cidade de Cherbourg.
+
+---
+class:
+
+
+# Desafio 1 - Resposta
+
+1) Criar um objeto chamado passageiras que seleciona somente as passageiras.
+
+```{r, message=FALSE}
+passageiras <- df_titanic %>%  filter(sexo == "feminino")
+```
+
+2) Criar um objeto chamado criancas_Cherbourg que seleciona as crianças com menos de 12 anos que embarcaram na cidade de Cherbourg.
+
+```{r, message=FALSE}
+criancas_Cherbourg <- df_titanic %>% filter(idade < 12 & embarque == "Cherbourg")
+```
+
+---
+class:
+
+
+# arrange
+
+Ordenar as linhas da base de dados conforme uma ou mais variáveis.
+
+```{r}
+# Ordena por ordem crescente da coluna nome.
+passageiros_ordenados <- df_titanic %>% arrange(nome)
+passageiros_ordenados
+```
+
+---
+class:
+
+
+# arrange 
+
+É possível ordenar na ordem descrescente e também por mais de uma variável.
+
+```{r}
+# Ordena por ordem decrescente de idade e por ordem crescente de nome.
+passageiros_ordenados <- df_titanic %>% arrange(desc(idade), nome)
+passageiros_ordenados
+```
+
+---
+class:
+
+
+# filter & arrange
+
+```{r}
+# Filtra os sobreviventes homens e ordena por classe.
+df_titanic  %>% 
+  filter(sexo == "masculino" & sobreviveu == "sim") %>% 
+  arrange(classe)
+```
+
+---
+class:
+
+
+# Desafio 2
+
+1) Ordenar os passageiros por ordem decrescente de classe e nomeie o objeto.
+
+2) Ordenar somente as passageiras por ordem de idade e dê um nome para o objeto.
+
+---
+class:
+
+
+# Desafio 2 - Resposta
+
+1) Ordenar os passageiros por ordem decrescente de classe e nomeie o objeto.
+
+```{r}
+passageiros <- df_titanic %>% arrange(desc(classe))
+```
+
+2) Ordenar somente as passageiras por ordem de idade e dê um nome para o objeto.
+
+```{r}
+mulheres <- df_titanic %>% 
+  filter(sexo == "feminino") %>% 
+  arrange(idade)
+```
+
+---
+class:
+
+
+# select
+
+Selecionar colunas (variáveis) da base de dados.
+
+```{r}
+# Seleciona as colunas indicadas.
+df_titanic %>% select(nome, idade, classe, embarque)
+```
+
+---
+class:
+
+
+# select
+
+O select tem várias funções úteis, como por exemplo:
+
+- **starts_with**("cla"): seleciona colunas que começam com "cla" <br></br>
+- **ends_with**("ifa"): seleciona colunas que terminam com "ifa" <br></br>
+- **contains**("ssa"): seleciona colunas que contêm "ssa" <br></br>
+
+---
+class:
+
+
+# select
+
+```{r}
+# Seleciona as colunas que começam com "id".
+df_titanic %>%  select(starts_with("id"))
+```
+
+---
+class:
+
+
+# select
+
+Ao inserir o caracter **-** na frente da coluna, você estará excluindo as colunas da seleção.
+
+```{r}
+df_titanic %>%  select(-id_passageiro, -nome)
+```
+
+---
+class:
+
+
+# Desafio 3
+
+
+1) Criar um objeto para salvar o resultado com as colunas nome, tarifa e classe.
+
+2) Mostrar uma tabela com as tarifas maiores que 50 por ordem decrescente de tarifa e ordem crescente de classe. A tabela não deverá conter os campos irmaos_conjuge, pais_criancas e passagem.
+
+---
+class:
+
+
+
+# Desafio 3 - Resposta
+
+1) Criar um objeto para salvar o resultado com as colunas nome, tarifa e classe.
+
+```{r}
+tarifa <- df_titanic %>% select(nome, tarifa, classe)
+```
+
+
+2) Mostrar uma tabela com as tarifas maiores que 50 por ordem decrescente de tarifa e ordem crescente de classe. A tabela não deverá conter os campos irmaos_conjuge, pais_criancas e passagem.
+
+```{r}
+tarifa_classe <- df_titanic %>% 
+  filter(tarifa > 50) %>% 
+  select(-irmaos_conjuge, -starts_with("p")) %>% 
+  arrange(desc(tarifa), classe)
+```
+
+---
+class:
+
+
+# mutate
+
+Criar ou modificar colunas de uma base de dados.
+
+Supondo que o valor da tarifa no dataset está em libras, e que 1£ = R$ 4.93, vamos descobrir qual é o valor das tarifas em reais.
+
+```{r}
+# Altera a coluna tarifa para o valor da tarifa em reais.
+tarifa_conversao <- df_titanic %>% mutate(tarifa = tarifa * 4.93)
+
+
+
+# Retorna a coluna tarifa para o valor da época.
+tarifa_conversao <- df_titanic %>% mutate(tarifa = tarifa / 4.93)
+```
+
+---
+class:
+
+
+# mutate
+
+```{r}
+# Cria no dataset uma nova variável chamada tarifa_reais.
+tarifa_conversao <- df_titanic %>% mutate(tarifa_real = tarifa * 4.93)
+tarifa_conversao
+```
+
+---
+class:
+
+
+# Desafio 4
+
+Criar uma tabela com um novo campo que contenha a tarifa em dólar seguindo essa cotação: 1£ = $ 1.31.
+Classifique por ordem decrescente de tarifa.
+
+---
+class:
+
+
+# Desafio 4 - Resposta
+
+Criar uma tabela com um novo campo que contenha a tarifa em dólar seguindo essa cotação: 1£ = $ 1.31.
+Classifique por ordem decrescente de tarifa.
+
+```{r}
+tarifa_conversao <- df_titanic %>% 
+  mutate(tarifa_dolar = tarifa * 1.31) %>% 
+  arrange(desc(tarifa))
+```
+
+---
+class:
+
+
+# summarize
+
+Sumariza colunas da base de dados, ou seja, resume os valores das colunas em um só valor,
+podendo ser a média, mediana, min, max, etc.
+
+```{r}
+# Calcula a média da variável idade
+# na.rm = TRUE remove os NAs
+df_titanic %>% summarize(mean(idade, na.rm=TRUE))
+
+```
+
+---
+class:
+
+
+# summarize
+
+```{r}
+# Calcula: número de mulheres, mediana geral da tarifa e número de passageiros.
+# No caso abaixo a função sum() retorna o número de mulheres. 
+# A função n() mostra o número de linhas (em cada grupo) e 
+# costuma ser bastante usada com o summarize.
+df_titanic %>% 
+  summarize(
+    mulheres = sum(sexo == "feminino", na.rm = TRUE),
+    mediana_tarifa = median(tarifa, na.rm = TRUE),
+    num_passageiros = n()
+)
+```
+
+---
+class:
+
+
+# summarize
+
+```{r}
+# Filtra os passageiros homens e calcula a mediana da tarifa.
+df_titanic %>% 
+  filter(sexo == "masculino") %>% 
+  summarize(
+    mediana_tarifa = median(tarifa, na.rm = TRUE)
+)
+```
+
+---
+class:
+
+
+# Desafio 5
+
+1) Calcular a média da tarifa.
+
+2) Filtrar as passageiras mulheres e calcular a mediana da tarifa. 
+
+---
+class:
+
+
+# Desafio 5 - Resposta
+
+1) Calcular a média da tarifa.
+
+```{r}
+media_tarifa <- df_titanic %>% summarize(mean(tarifa, na.rm=TRUE))
+```
+
+2) Filtrar as passageiras mulheres e calcular a mediana da tarifa.
+
+```{r}
+mulheres_tarifa <- df_titanic %>% 
+  filter(sexo == "feminino") %>% 
+  summarize(
+    mediana_tarifa = median(tarifa, na.rm = TRUE)
+)
+```
+
+---
+class:
+
+
+# group_by + summarize
+
+Agrupa as colunas de uma base de dados. 
+
+O group_by é bastante utilizado com o summarize.
+
+```{r}
+# Agrupa pela variável sobreviveu e calcula
+# o número de passageiros por grupo (sim/nao).
+df_titanic %>% 
+  group_by(sobreviveu) %>% 
+  summarize(num_passageiros = n())
+```
+
+---
+class:
+
+
+# group_by + summarize 
+  
+```{r}
+# Agrupa pelo local de embarque e calcula a mediana da tarifa de cada grupo.
+df_titanic %>% 
+  group_by(embarque) %>% 
+  summarize(mediana_tarifa = median(tarifa, na.rm = TRUE))
+```
+
+---
+class:
+
+
+# Desafios 6
+
+1) Criar uma tabela com a quantidade de pessoas por classe.
+
+2) Criar uma tabela com a mediana da tarifa por sexo.
+
+---
+class:
+
+
+# Desafio 6 - Resposta
+
+1) Criar uma tabela com a quantidade de pessoas por classe.
+  
+```{r}
+df_titanic %>% 
+  group_by(classe) %>% 
+  summarize(qtd_classe = n())
+```
+
+---
+class:
+
+
+# Desafio 6  - Resposta
+
+2) Criar uma tabela com a mediana da tarifa por sexo.
+
+```{r}
+df_titanic %>% 
+  group_by(sexo) %>% 
+  summarize(mediana_tarifa = median(tarifa, na.rm = TRUE))
+```
+
+---
+class:
+
+
+# Join
+
+Com o **dplyr** também é possível fazer joins.
+
+<center><img src= "img/dplyr_join.png" style="width: 40%"></center>
+
+[Fonte: @yutannihilation](https://twitter.com/yutannihilation/status/551572539697143808)
 
 
 ---
