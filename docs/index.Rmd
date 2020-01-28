@@ -46,17 +46,31 @@ library(tidyverse)
 # Programação
 
 ## Manhã
-- ...
+- O que é um algoritmo?
 
-- ...
+- O que é o R?
+
+- Introdução ao RStudio
+
+- Boas Práticas de Programação
+
+- Fundamentos de R
+
+---
+class:
+
+# Programação
 
 ## Tarde
-- ...
+- Introdução ao Pacote Tidyverse
 
-- ...
+- O Operador Pipe
 
+- Visualização de Data Frames no RStudio
 
+- Introdução ao Pacote dplyr
 
+- Para aprender mais
 
 ---
 class:  center
