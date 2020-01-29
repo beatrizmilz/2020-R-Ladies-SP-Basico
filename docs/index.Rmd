@@ -719,7 +719,14 @@ class:
 
 # Desafio 1
 
-Daenerys quer conquistar uma aldeia com os seus três dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque?
+Haydée que contabilizar quantas pessoas participaram dos meetups das RLadies em 2019. Ela contabilizou o número de pessoas que participaram em cada evento: 
+
+1- Fevereiro, Outubro e Novembro - 60 pessoas
+1- Abril e Agosto - 30 pessoas
+1- Março, Maio e Julho - 20 pessoas
+1- Junho, Setembro e Dezembro - 45 pessoas  
+
+Quantas pessoas participaram dos meetups das RLadies em 2019? 
 
 ---
 class:    
@@ -727,10 +734,17 @@ class:
 
 # Desafio 1 - Resposta
 
-Daenerys quer conquistar uma aldeia com os seus três dragões. Cada dragão mata 32 ovelhas e 90 pessoas a cada 1 hora. Considerando que ela atacará a aldeia por 4h, quantas ovelhas e pessoas ao todo os dragões irão assassinar após o ataque? 
+Haydée que contabilizar quantas pessoas participaram dos meetups das RLadies em 2019. Ela contabilizou o número de pessoas que participaram em cada evento:
+
+1- Fevereiro, Outubro e Novembro - 60 pessoas
+1- Abril e Agosto - 30 pessoas
+1- Março, Maio e Julho - 20 pessoas
+1- Junho, Setembro e Dezembro - 45 pessoas  
+
+Quantas pessoas participaram dos meetups das RLadies em 2019? 
 
 ```{r}
-3*32*4 + 3*90*4
+3*60 + 2*30 + 3*20 + 3*45
 ```
 
 ---
