@@ -15,7 +15,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 # Para exportar em PDF: pagedown::chrome_print("index.html", timeout = 600)
-knit: pagedown::chrome_print
+# knit: pagedown::chrome_print
 ---
 layout: true
   
@@ -45,7 +45,7 @@ library(tidyverse)
 
 # Pré-requisitos
 
-## - R e RStudio instalados no seu notebook 
+## - `R` e `RStudio` instalados no seu notebook 
 
 ```{r, echo=FALSE, out.width="40%"}
 knitr::include_graphics("img/rlogos/rstudio-r.jpg")
@@ -53,7 +53,7 @@ knitr::include_graphics("img/rlogos/rstudio-r.jpg")
 
 ## <center><b>OU</b></center> 
 
-## - RStudio Cloud
+## - `RStudio` Cloud
 
 - Através do link: [https://rstudio.cloud/project/876850](https://rstudio.cloud/project/876850)
 
@@ -66,7 +66,7 @@ knitr::include_graphics("img/rstudiocloud.PNG")
 ---
 class:
 
-# Usando a RStudio Cloud
+# Usando a `RStudio` Cloud
 - Exemplo de como acessar o projeto (GIF):
 
 ```{r, echo=FALSE, out.width="100%"}
@@ -135,7 +135,7 @@ R-Ladies São Paulo integra, orgulhosamente, a organização R-Ladies Global, em
 
 Através de meetups e mentorias em um ambiente seguro e amigável.
 
-Nosso principal objetivo é promover a linguagem computacional estatística R compartilhando conhecimento, assim, quem tiver interesse na linguagem será bem-vinda, independente do nível de conhecimento. 
+Nosso principal objetivo é promover a linguagem computacional estatística `R` compartilhando conhecimento, assim, quem tiver interesse na linguagem será bem-vinda, independente do nível de conhecimento. 
 
 
 Fonte: [About us - R-Ladies](https://rladies.org/about-us/), [Meetup R-Ladies São Paulo](https://www.meetup.com/R-Ladies-Sao-Paulo/)
@@ -381,7 +381,7 @@ class:
 class:    
 
 # Exemplo
-**Gráfico elaborado com R - Proposta Orçamentária PMSP 2019 - 10 maiores orçamentos** 
+**Gráfico elaborado com `R` - Proposta Orçamentária PMSP 2019 - 10 maiores orçamentos** 
 
 ```{r echo=FALSE, out.width="70%"}
 knitr::include_graphics("img/PMSP-chunk-5-1.png") 
@@ -394,7 +394,7 @@ class:
 
 
 # Exemplo
-**Gráfico elaborado com R - Execução Orçamentária PMSP na função Gestão Ambiental** 
+**Gráfico elaborado com `R` - Execução Orçamentária PMSP na função Gestão Ambiental** 
 
 ```{r echo=FALSE, out.width="70%"}
 knitr::include_graphics("img/PMSP-chunk-5-2.png") 
@@ -407,7 +407,7 @@ class:
 
 
 # Exemplo
-**Gráfico elaborado com R - Material Particulado 10 - Dados CETESB - RPollution** 
+**Gráfico elaborado com `R` - Material Particulado 10 - Dados CETESB - RPollution** 
 
 ```{r echo=FALSE, out.width="70%"}
 knitr::include_graphics("img/PMSP-chunk-6-1.png") 
@@ -453,7 +453,7 @@ class:
 ```{r echo=FALSE, out.width="80%"}
 knitr::include_graphics("img/RStudio_screen.png")
 ```
-Fonte: [Curso Introdução ao R - Fatec](https://github.com/MaryMS/2018-11-R-Course-FatecZS)
+Fonte: [Curso Introdução ao `R` - Fatec](https://github.com/MaryMS/2018-11-R-Course-FatecZS)
 
 ---
 class:    
@@ -681,7 +681,7 @@ class:
 ---
 class: center, middle
 
-## R Básico
+## `R` Básico
 
 ---
 class:    
@@ -689,17 +689,17 @@ class:
 
 # Instruções
 
-- Abrir o RStudio da sua máquina <br></br>
+- Abrir o `RStudio` da sua máquina <br></br>
 
-- Abrir um novo R script (file -> new file -> R script)
+- Abrir um novo `R` script (file -> new file -> `R` script)
 
 ---
 class:    
 
 
-# R como calculadora
+# `R` como calculadora
 
-- O R permite realizar muitas operações aritméticas em seu console!
+- O `R` permite realizar muitas operações aritméticas em seu console!
 
 ```{r}
 2 + 5    # adição
@@ -715,7 +715,7 @@ class:
 class:    
 
 
-# R como calculadora
+# `R` como calculadora
 
 ```{r}
 9 %% 4   # resto da divisão de 9 por 4
@@ -806,7 +806,7 @@ class:
 
 - O atalho ALT + **-** gera o operador **<-** <br></br>
 
-- Todas as declarações R onde são criadas variáveis atribuindo valores a elas, tem a mesma forma:  
+- Todas as declarações `R` onde são criadas variáveis atribuindo valores a elas, tem a mesma forma:  
 
 <center><b>nome_da_variável <- valor<b></center>
 
@@ -843,9 +843,9 @@ class:
 # Nomes de variáveis
 - Os nomes devem começar com uma letra. Podem conter letras, números, _ e .<br></br>
 
-- Recomendação do autor do livro R For Data Science: **usar_snake_case**, ou seja, palavras escritas em minúsculo separadas pelo underscore (_).<br></br>
+- Recomendação do autor do livro `R` For Data Science: **usar_snake_case**, ou seja, palavras escritas em minúsculo separadas pelo underscore (_).<br></br>
 
-- O R é *case sensitive*, isto é, faz a diferenciação entre as letras minúsculas e maiúsculas. Portanto, uma variável chamado *teste* é diferente de uma outra variável chamada *Teste*.
+- O `R` é *case sensitive*, isto é, faz a diferenciação entre as letras minúsculas e maiúsculas. Portanto, uma variável chamado *teste* é diferente de uma outra variável chamada *Teste*.
 
 ---
 class:    
@@ -1330,7 +1330,7 @@ class:
 
 # NA
 
-Uma característica importante do R que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
+Uma característica importante do `R` que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
 
 **NA** representa um valor desconhecido. 
 
@@ -1431,7 +1431,7 @@ class:
 
 # Pacotes no R
 
-**Pacotes** são coleções de funções, dados e documentação que estendem as capacidades do R básico.
+**Pacotes** são coleções de funções, dados e documentação que estendem as capacidades do `R` básico.
 
 Eles precisam ser instalados e carregados.
 
@@ -1516,7 +1516,7 @@ class:
 
 # O Tidyverse
 
-É uma coleção de pacotes R projetados para a ciência de dados. Todos os pacotes compartilham uma mesma filosofia de desenvolvimento, sintaxe e estruturas de dados.
+É uma coleção de pacotes `R` projetados para a ciência de dados. Todos os pacotes compartilham uma mesma filosofia de desenvolvimento, sintaxe e estruturas de dados.
 
 ```{r echo=FALSE, fig.align='center', out.width="90%"}
 knitr::include_graphics("img/Tidyverse_packages.png")
@@ -1584,7 +1584,7 @@ class:
 knitr::include_graphics("img/tidy-1.png")
 ```
 
-Fonte: [Data Science with R by Garrett Grolemund](http://garrettgman.github.io/tidying/)
+Fonte: [Data Science with `R` by Garrett Grolemund](http://garrettgman.github.io/tidying/)
 
 ---
 class:
@@ -1622,7 +1622,7 @@ class:
 
 # Instruções
 
-- Abrir o RStudio da sua máquina <br></br>
+- Abrir o `RStudio` da sua máquina <br></br>
 
 - Fazer o download do repositório: https://github.com/MaryMS/2019-02-R-Basics-R-LadiesSP <br></br>
 
@@ -1630,13 +1630,16 @@ class:
 
 - Abrir o arquivo oficina_R_basico.Rproj <br></br>
 
-- Abrir um novo R script (file -> new file -> R script)
+- Abrir um novo `R` script (file -> new file -> `R` script)
 
 ---
 class:
 
 
 # Importação de arquivos
+
+
+- Iremos importar a base [`titanic`](https://raw.githubusercontent.com/beatrizmilz/2020-R-Ladies-SP-Basico/master/docs/data/titanic.csv):
 
 ```{r, message=FALSE}
 library(tidyverse)
@@ -2167,7 +2170,7 @@ class:
 # Para aprender mais
 
 - [Repositório RLadies São Paulo](https://github.com/rladies/meetup-presentations_sao-paulo) <br></br>
-- [Livro R for Data Science](https://r4ds.had.co.nz) <br></br>
+- [Livro `R` for Data Science](https://r4ds.had.co.nz) <br></br>
 - [Software Carpentry](https://software-carpentry.org/lessons/) <br></br>
 - [Material do Curso-R](https://www.curso-r.com/material/) <br></br>
 - [R-Bloggers](https://www.r-bloggers.com) <br></br>
