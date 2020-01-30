@@ -721,10 +721,10 @@ class:
 
 Haydée quer contabilizar quantas pessoas participaram dos meetups das RLadies São Paulo em 2019. Ela contabilizou o número de pessoas que participaram em cada evento: 
 
-1- Fevereiro, Outubro e Novembro - 60 pessoas
-1- Abril e Agosto - 30 pessoas
-1- Março, Maio e Julho - 20 pessoas
-1- Junho, Setembro e Dezembro - 45 pessoas  
+1. Fevereiro, Outubro e Novembro - 60 pessoas
+1. Abril e Agosto - 30 pessoas
+1. Março, Maio e Julho - 20 pessoas
+1. Junho, Setembro e Dezembro - 45 pessoas  
 
 Quantas pessoas participaram dos meetups das RLadies em 2019? 
 
@@ -736,10 +736,10 @@ class:
 
 Haydée quer contabilizar quantas pessoas participaram dos meetups das RLadies São Paulo em 2019. Ela contabilizou o número de pessoas que participaram em cada evento:
 
-1- Fevereiro, Outubro e Novembro - 60 pessoas
-1- Abril e Agosto - 30 pessoas
-1- Março, Maio e Julho - 20 pessoas
-1- Junho, Setembro e Dezembro - 45 pessoas  
+1. Fevereiro, Outubro e Novembro - 60 pessoas
+1. Abril e Agosto - 30 pessoas
+1. Março, Maio e Julho - 20 pessoas
+1. Junho, Setembro e Dezembro - 45 pessoas  
 
 Quantas pessoas participaram dos meetups das RLadies em 2019? 
 
