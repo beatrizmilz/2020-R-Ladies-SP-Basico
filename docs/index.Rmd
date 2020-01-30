@@ -1161,8 +1161,8 @@ class:
 
 # Desafio 4
 
-Quantas observações tem o data.frame iris?<br></br>
-Quais são as variáveis do data.frame iris?
+1) Quantas observações tem o data.frame iris?<br></br>
+2) Quais são as variáveis do data.frame iris?
 
 ---
 class:    
@@ -1170,11 +1170,11 @@ class:
 
 # Desafio 4 - Resposta
 
-Quantas observações tem o data.frame iris?<br></br>
+1) Quantas observações tem o data.frame iris?<br></br>
 ```{r}
 tail(df)
 ```
-Quais são as variáveis do data.frame iris?
+2) Quais são as variáveis do data.frame iris?
 
 ```{r}
 names(df)
