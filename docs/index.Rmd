@@ -14,7 +14,8 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-# Para exportar em PDF: pagedown::chrome_print("docs/index.html")
+# Para exportar em PDF: pagedown::chrome_print("index.html", timeout = 600)
+knit: pagedown::chrome_print
 ---
 layout: true
   
@@ -26,7 +27,7 @@ layout: true
 <a href="http://instagram.com/RLadiesSaoPaulo">Instagram</a> |
 <a href="http://facebook.com/RLadiesSaoPaulo">Facebook</a> |
 <a href="https://github.com/rladies/meetup-presentations_sao-paulo">Github</a> |
-<a href="http://bit.ly/...">bit.ly/...</a>
+<a href="http://bit.ly/2020-2-rladies">bit.ly/2020-2-rladies</a>
 
 
 </span></div> 
@@ -42,6 +43,40 @@ library(tidyverse)
 
 ```
 
+# Pré-requisitos
+
+## - R e RStudio instalados no seu notebook 
+
+```{r, echo=FALSE, out.width="40%"}
+knitr::include_graphics("img/rlogos/rstudio-r.jpg")
+```
+
+## <center><b>OU</b></center> 
+
+## - RStudio Cloud
+
+- Através do link: [https://rstudio.cloud/project/876850](https://rstudio.cloud/project/876850)
+
+
+```{r, echo=FALSE, out.width="40%"}
+knitr::include_graphics("img/rstudiocloud.PNG")
+```
+
+
+---
+class:
+
+# Usando a RStudio Cloud
+- Exemplo de como acessar o projeto (GIF):
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/gif-rstudiocloud.gif")
+```
+
+
+- Importante: Quando aparecer na sua tela, clique em **"Save a permanent copy"**.
+---
+class:
 
 # Programação
 
@@ -78,12 +113,12 @@ class:  center
 # Apoio
 
 <BR>
-```{r echo=FALSE, fig.cap="<center><b>Insper</center></b>", out.width="50%"}
-#knitr::include_graphics("img/logos/")
+```{r echo=FALSE, fig.cap="<center><b>Insper</center></b>", out.width="30%"}
+knitr::include_graphics("img/rlogos/Insper-positivo.png")
 ```
 
 <BR>
-```{r, echo=FALSE, out.width="25%", fig.cap="<center><b>RConsortium</center></b>"}
+```{r, echo=FALSE, out.width="20%", fig.cap="<center><b>RConsortium</center></b>"}
 knitr::include_graphics("img/rlogos/RCONSORTIUM.png")
 ```
 
