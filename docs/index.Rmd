@@ -1460,11 +1460,15 @@ class:
 
 # Cronograma da tarde
 
-- O pacote tidyverse
+- Introdução ao Pacote Tidyverse
 
-- Importando arquivos
+- O Operador Pipe
 
-- Manipulação de dados com o pacote dplyr
+- Visualização de Data Frames no RStudio
+
+- Introdução ao Pacote dplyr
+
+- Para aprender mais
 
 
 ---
