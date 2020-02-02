@@ -2199,6 +2199,13 @@ class:
 
 - https://rstudio-pubs-static.s3.amazonaws.com/279878_c7634fb5fe9e40b7abc7c35aa724a2a0.html
 
+
+---
+class:    
+
+
+# Referências
+
 - https://analisereal.com/tag/introducao-a-analise-de-dados-com-o-r-2/
 
 - http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
