@@ -1491,6 +1491,21 @@ knitr::include_graphics("img/cran_task_view.png")
 ```
 
 ---
+class:
+
+# Vamos nos preparar para a tarde?
+
+Para quem está usando o RStudio instalado no computador:
+
+- Fazer o download do repositório: https://github.com/beatrizmilz/2020-R-Ladies-SP-Basico
+
+- Descompactar na pasta Documentos <br></br>
+
+```{r echo=FALSE, fig.align='center', out.width="80%"}
+knitr::include_graphics("img/instrucao_tarde.png")
+```
+
+---
 class:    
 
 # Cronograma da tarde
@@ -1623,10 +1638,6 @@ class:
 # Instruções
 
 - Abrir o `RStudio` da sua máquina <br></br>
-
-- Fazer o download do repositório: https://github.com/MaryMS/2019-02-R-Basics-R-LadiesSP <br></br>
-
-- Descompactar na pasta Documentos <br></br>
 
 - Abrir o arquivo oficina_R_basico.Rproj <br></br>
 
