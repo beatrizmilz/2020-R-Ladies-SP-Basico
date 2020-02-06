@@ -575,47 +575,183 @@ class: center, middle
 
 ## Boas práticas iniciais para organizar seu projeto
 
----
-class: 
-
-> **Tratar dados como somente leitura:** esse é provavelmente o objetivo mais importante da configuração de um projeto. Os dados geralmente consomem tempo e/ou são caros para coletar. Trabalhar com eles interativamente (por exemplo, no Excel), onde eles podem ser modificados, significa que você nunca tem certeza de onde os dados vieram, ou como eles foram modificados desde a coleta. Portanto, é uma boa ideia tratar seus dados como “somente leitura”.
-
-
-> **Qualquer coisa gerada pelos seus scripts deve ser tratada como descartável:** todos devem poder ser criados novamente a partir dos seus scripts. Existem várias maneiras diferentes de gerenciar essa saída. Acho útil ter uma pasta de saída com subdiretórios diferentes para cada análise separada. Isso fica mais fácil depois, já que muitas das análises são exploratórias e não acabam sendo usadas no projeto final, e algumas análises são compartilhadas entre os projetos.
 
 Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
 
 ---
 class: 
 
-> **Os nomes das suas variáveis devem fazer sentido:** Ao nomear suas variáveis, dê nomes que tenham significado para seres humanos. Pense que o código que você escreve hoje deve ser claro para você daqui 1 ano e também deve ser claro para algum(a) colega seu(ua).
+# Boas práticas 
 
-> **Comente bem o seu código:** É possível fazer comentários usando o símbolo '#'. É sempre bom explicar o que uma variável armazena, o que uma função faz, porque alguns parâmetros são passados para uma determinada função, qual é o objetivo de um trecho de código, etc.
+- **Tratar dados como somente leitura:** 
 
-> **Evite linhas de código muito longas:** Usar linhas de código mais curtas ajuda na leitura do código.
+- Esse é provavelmente o objetivo mais importante da configuração de um projeto. 
+- Os dados geralmente consomem tempo e/ou são caros para coletar. 
+
+- Trabalhar com eles interativamente (por exemplo, no Excel), onde eles podem ser modificados, significa que você nunca tem certeza de onde os dados vieram, ou como eles foram modificados desde a coleta. 
+
+- Portanto, é uma boa ideia tratar seus dados como “somente leitura”.
+
+- Nunca sobrescrever os seus dados originais! Isso vale para a base e para variáveis.
+
+- Ex: ter uma pasta "data_raw" (dados brutos), e "data" (dados já tratados). 
+
+- Exemplo dos dados de orçamento da prefeitura: com código, fazer download dos dados brutos em uma pasta "data_raw". Tratar os dados, e a base "limpa" deve ser exportada para a pasta "data". Tudo isso deve ser realizado através de código! 
+
+
+---
+class: 
+
+# Boas práticas 
+
+- **Qualquer coisa gerada pelos seus scripts deve ser tratada como descartável:** 
+
+
+- Não salvar o workspace ao fechar!
+
+- Ideal é que todos os seus resultados sejam possíveis de ser reproduzidos através do script. 
+
+
+
+---
+class: 
+
+# Boas práticas 
+
+- **Os nomes das suas variáveis devem fazer sentido:** Ao nomear suas variáveis, dê nomes que tenham significado para seres humanos. Pense que o código que você escreve hoje deve ser claro para você daqui 1 ano e também deve ser claro para algum(a) colega seu(ua).
+
+
+
+- **Exemplo positivo**:
+
+```{r include=TRUE, eval = FALSE }
+lista_de_mercado <- c("chocolate", "pao", "café")
+
+```
+
+
+- **Exemplo negativo**:
+
+```{r include=TRUE, eval = FALSE }
+lista <- c("chocolate", "pao", "café")
+```
+
+---
+class: 
+
+# Boas práticas 
+
+- **Comente bem o seu código:** É possível fazer comentários usando o símbolo '#'. É sempre bom explicar o que uma variável armazena, o que uma função faz, porque alguns parâmetros são passados para uma determinada função, qual é o objetivo de um trecho de código, etc.
+
+```{r eval=FALSE, include=TRUE}
+# Esse é um exemplo. O # é útil para escrever um comentário!
+
+help(sum) # a função help é útil para pesquisar a documentação 
+```
+
+- Atalho útil para comentário: `Ctrl + Shift + C`
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/gif-atalho-comentario.gif")
+```
+
+
+---
+class: 
+
+# Boas práticas
+
+- **Evite linhas de código muito longas:** Usar linhas de código mais curtas ajuda na leitura do código.
+
+- **Exemplo positivo**:  fica mais fácil de ler!
+```{r include=FALSE}
+df_titanic <- read_csv("data/titanic.csv")
+```
+
+```{r eval=FALSE, include=TRUE}
+df_titanic  %>%
+  filter(sexo == "masculino" & sobreviveu == "sim") %>%
+  arrange(classe)
+```
+
+- **Exemplo para evitar:**  fica mais difícil de ler
+```{r eval=FALSE, include=TRUE}
+df_titanic  %>%   filter(sexo == "masculino" & sobreviveu == "sim") %>%   arrange(classe)
+```
+
+- Atalho útil para identação: `Ctrl + Shift + A`
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/gif-atalho-identacao.gif")
+```
 
 Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
 
 ---
 class: 
 
-> **Escreva um código organizado:** Por exemplo, adote um padrão no uso de minúsculas e maiúsculas, uma lógica única na organização de pastas e arquivos, pode ser adotada uma breve descrição (como comentário) indicando o que um determinado script faz.
+# Boas práticas 
 
-> **Carregue todos os pacotes que irá usar sempre no início do arquivo:** Quando alguém abrir o seu código será fácil identificar quais são os pacotes que devem ser instalados e quais dependências podem existir.
+- **Escreva um código organizado:** Por exemplo, adote um padrão no uso de minúsculas e maiúsculas, uma lógica única na organização de pastas e arquivos, pode ser adotada uma breve descrição (como comentário) indicando o que um determinado script faz.
 
-> **Evite referência de caminho que considere seu computador ou usuário:** Faça referência ao caminho do projeto.
+- Exemplo: use snake_case (palavras em minúsculas, separados por um underscore) em todas as variáveis e funções do seu projeto.
+
+- Dica útil: função `clean_names()` do pacote `janitor`.
 
 
-Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+```{r}
+names(iris)
+iris_clean <- janitor::clean_names(iris)
+names(iris_clean)
+```
+
+
+
+
+---
+class: 
+
+# Boas práticas 
+- **Carregue todos os pacotes que irá usar sempre no início do arquivo:** Quando alguém abrir o seu código será fácil identificar quais são os pacotes que devem ser instalados e quais dependências podem existir.
+
+- Exemplo:
+
+```{r, eval=FALSE, include=TRUE}
+# Pacotes utilizados no projeto
+library(dplyr) # utilizada para manipulação dos dados
+library(ggplot2) # utilizada para criar gráficos bonitos
+library(magrittr) # possibilita usar o pipe %>% 
+```
+
+---
+class: 
+
+# Boas práticas 
+- **Evite referência de caminho que considere seu computador ou usuário:** Faça referência ao caminho do projeto.
+
+- **Exemplo positivo**:
+
+```{r include=TRUE, eval = FALSE }
+df_titanic <- read_csv("data/titanic.csv")
+```
+
+
+- **Exemplo negativo**:
+
+```{r include=TRUE, eval = FALSE }
+df_titanic <- read_csv("C:\Users\beatr\Documents\GitHub\2020-R-Ladies-SP-Basico\data/titanic.csv")
+```
+
+
 ---
 class:    
 
 
 # Antes de começar: o projeto
 
-> Ao realizar um projeto, sempre organizar os arquivos em uma **pasta** que conterá todos os arquivos de seu projeto. 
+- Ao realizar um projeto, sempre organizar os arquivos em uma **pasta** que conterá todos os arquivos de seu projeto. 
 
-> Nomear novos arquivos com **nomes descritivos**
+- Nomear novos arquivos com **nomes descritivos**
 
 
 ```{r echo=FALSE, out.width="100%"}
@@ -628,9 +764,15 @@ class:
 
 # Projetos
 
-> "Um bom layout de projeto facilitará sua vida: ajudará a garantir a integridade de seus dados; facilita o compartilhamento de seu código com outra pessoa (colega de laboratório, colaborador ou /orientador); ele permite que você facilmente faça o upload do seu código com a submissão do seu manuscrito; torna-se mais fácil recuperar o projeto depois de um intervalo. "
+- Um bom layout de projeto facilitará sua vida:
 
-Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+- ajudará a garantir a integridade de seus dados;
+
+- facilita o compartilhamento de seu código com outra pessoa (colega de laboratório, colaborador ou /orientador); 
+
+- ele permite que você facilmente faça o upload do seu código com a submissão do seu manuscrito; torna-se mais fácil recuperar o projeto depois de um intervalo. 
+
+
 
 ---
 class:    
@@ -660,11 +802,11 @@ class:
 
 # Atalhos importantes
 
-Os atalhos facilitam. Veja os principais:<br></br>
+Os atalhos facilitam. Veja os principais:
 
-- CTRL + ENTER: roda a linha selecionada no script.<br></br>
+- `CTRL + ENTER`: executa a linha selecionada no script.
 
-- ALT + **-**: (<-) sinal de atribuição.<br></br>
+- `ALT + **-**`: cria o `<-` - sinal de atribuição.
 
 ---
 class:    

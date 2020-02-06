@@ -203,8 +203,8 @@ class:
 
 Atualizado em: fevereiro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
-<div id="htmlwidget-3b4aa582cf4297051cd0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3b4aa582cf4297051cd0">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["R-Ladies Belo Horizonte","R-Ladies São Paulo","R-Ladies Rio de Janeiro","R-Ladies Niterói","R-Ladies Floripa","R-Ladies Porto Alegre","R-Ladies Curitiba","R-Ladies Salvador","R-Ladies Natal","R-Ladies Recife","R-Ladies Goiânia","R-Ladies Lavras","R-Ladies Manaus","R-Ladies Vitória"],[758,608,465,462,357,313,203,162,140,138,68,23,21,14],[10,15,5,7,7,6,1,4,3,1,1,1,0,0],[0,0,2,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>name<\/th>\n      <th>members<\/th>\n      <th>past_events<\/th>\n      <th>upcoming_events<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6609b0be72218a6a7443" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6609b0be72218a6a7443">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["R-Ladies Belo Horizonte","R-Ladies São Paulo","R-Ladies Rio de Janeiro","R-Ladies Niterói","R-Ladies Floripa","R-Ladies Porto Alegre","R-Ladies Curitiba","R-Ladies Salvador","R-Ladies Natal","R-Ladies Recife","R-Ladies Goiânia","R-Ladies Lavras","R-Ladies Manaus","R-Ladies Vitória"],[758,608,465,462,357,313,203,162,140,138,68,23,21,14],[10,15,5,7,7,6,1,4,3,1,1,1,0,0],[0,0,2,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>name<\/th>\n      <th>members<\/th>\n      <th>past_events<\/th>\n      <th>upcoming_events<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 class:    
@@ -523,47 +523,196 @@ class: center, middle
 
 ## Boas práticas iniciais para organizar seu projeto
 
----
-class: 
-
-&gt; **Tratar dados como somente leitura:** esse é provavelmente o objetivo mais importante da configuração de um projeto. Os dados geralmente consomem tempo e/ou são caros para coletar. Trabalhar com eles interativamente (por exemplo, no Excel), onde eles podem ser modificados, significa que você nunca tem certeza de onde os dados vieram, ou como eles foram modificados desde a coleta. Portanto, é uma boa ideia tratar seus dados como “somente leitura”.
-
-
-&gt; **Qualquer coisa gerada pelos seus scripts deve ser tratada como descartável:** todos devem poder ser criados novamente a partir dos seus scripts. Existem várias maneiras diferentes de gerenciar essa saída. Acho útil ter uma pasta de saída com subdiretórios diferentes para cada análise separada. Isso fica mais fácil depois, já que muitas das análises são exploratórias e não acabam sendo usadas no projeto final, e algumas análises são compartilhadas entre os projetos.
 
 Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
 
 ---
 class: 
 
-&gt; **Os nomes das suas variáveis devem fazer sentido:** Ao nomear suas variáveis, dê nomes que tenham significado para seres humanos. Pense que o código que você escreve hoje deve ser claro para você daqui 1 ano e também deve ser claro para algum(a) colega seu(ua).
+# Boas práticas 
 
-&gt; **Comente bem o seu código:** É possível fazer comentários usando o símbolo '#'. É sempre bom explicar o que uma variável armazena, o que uma função faz, porque alguns parâmetros são passados para uma determinada função, qual é o objetivo de um trecho de código, etc.
+- **Tratar dados como somente leitura:** 
 
-&gt; **Evite linhas de código muito longas:** Usar linhas de código mais curtas ajuda na leitura do código.
+- Esse é provavelmente o objetivo mais importante da configuração de um projeto. 
+- Os dados geralmente consomem tempo e/ou são caros para coletar. 
+
+- Trabalhar com eles interativamente (por exemplo, no Excel), onde eles podem ser modificados, significa que você nunca tem certeza de onde os dados vieram, ou como eles foram modificados desde a coleta. 
+
+- Portanto, é uma boa ideia tratar seus dados como “somente leitura”.
+
+- Nunca sobrescrever os seus dados originais! Isso vale para a base e para variáveis.
+
+- Ex: ter uma pasta "data_raw" (dados brutos), e "data" (dados já tratados). 
+
+- Exemplo dos dados de orçamento da prefeitura: com código, fazer download dos dados brutos em uma pasta "data_raw". Tratar os dados, e a base "limpa" deve ser exportada para a pasta "data". Tudo isso deve ser realizado através de código! 
+
+
+---
+class: 
+
+# Boas práticas 
+
+- **Qualquer coisa gerada pelos seus scripts deve ser tratada como descartável:** 
+
+
+- Não salvar o workspace ao fechar!
+
+- Ideal é que todos os seus resultados sejam possíveis de ser reproduzidos através do script. 
+
+
+
+---
+class: 
+
+# Boas práticas 
+
+- **Os nomes das suas variáveis devem fazer sentido:** Ao nomear suas variáveis, dê nomes que tenham significado para seres humanos. Pense que o código que você escreve hoje deve ser claro para você daqui 1 ano e também deve ser claro para algum(a) colega seu(ua).
+
+
+
+- **Exemplo positivo**:
+
+
+```r
+lista_de_mercado &lt;- c("chocolate", "pao", "café")
+```
+
+
+- **Exemplo negativo**:
+
+
+```r
+lista &lt;- c("chocolate", "pao", "café")
+```
+
+---
+class: 
+
+# Boas práticas 
+
+- **Comente bem o seu código:** É possível fazer comentários usando o símbolo '#'. É sempre bom explicar o que uma variável armazena, o que uma função faz, porque alguns parâmetros são passados para uma determinada função, qual é o objetivo de um trecho de código, etc.
+
+
+```r
+# Esse é um exemplo. O # é útil para escrever um comentário!
+
+help(sum) # a função help é útil para pesquisar a documentação 
+```
+
+- Atalho útil para comentário: `Ctrl + Shift + C`
+
+&lt;img src="img/gif-atalho-comentario.gif" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: 
+
+# Boas práticas
+
+- **Evite linhas de código muito longas:** Usar linhas de código mais curtas ajuda na leitura do código.
+
+- **Exemplo positivo**:  fica mais fácil de ler!
+
+
+
+```r
+df_titanic  %&gt;%
+  filter(sexo == "masculino" &amp; sobreviveu == "sim") %&gt;%
+  arrange(classe)
+```
+
+- **Exemplo para evitar:**  fica mais difícil de ler
+
+```r
+df_titanic  %&gt;%   filter(sexo == "masculino" &amp; sobreviveu == "sim") %&gt;%   arrange(classe)
+```
+
+- Atalho útil para identação: `Ctrl + Shift + A`
+
+&lt;img src="img/gif-atalho-identacao.gif" width="100%" style="display: block; margin: auto;" /&gt;
 
 Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
 
 ---
 class: 
 
-&gt; **Escreva um código organizado:** Por exemplo, adote um padrão no uso de minúsculas e maiúsculas, uma lógica única na organização de pastas e arquivos, pode ser adotada uma breve descrição (como comentário) indicando o que um determinado script faz.
+# Boas práticas 
 
-&gt; **Carregue todos os pacotes que irá usar sempre no início do arquivo:** Quando alguém abrir o seu código será fácil identificar quais são os pacotes que devem ser instalados e quais dependências podem existir.
+- **Escreva um código organizado:** Por exemplo, adote um padrão no uso de minúsculas e maiúsculas, uma lógica única na organização de pastas e arquivos, pode ser adotada uma breve descrição (como comentário) indicando o que um determinado script faz.
 
-&gt; **Evite referência de caminho que considere seu computador ou usuário:** Faça referência ao caminho do projeto.
+- Exemplo: use snake_case (palavras em minúsculas, separados por um underscore) em todas as variáveis e funções do seu projeto.
+
+- Dica útil: função `clean_names()` do pacote `janitor`.
 
 
-Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+
+```r
+names(iris)
+```
+
+```
+## [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"
+```
+
+```r
+iris_clean &lt;- janitor::clean_names(iris)
+names(iris_clean)
+```
+
+```
+## [1] "sepal_length" "sepal_width"  "petal_length" "petal_width"  "species"
+```
+
+
+
+
+---
+class: 
+
+# Boas práticas 
+- **Carregue todos os pacotes que irá usar sempre no início do arquivo:** Quando alguém abrir o seu código será fácil identificar quais são os pacotes que devem ser instalados e quais dependências podem existir.
+
+- Exemplo:
+
+
+```r
+# Pacotes utilizados no projeto
+library(dplyr) # utilizada para manipulação dos dados
+library(ggplot2) # utilizada para criar gráficos bonitos
+library(magrittr) # possibilita usar o pipe %&gt;% 
+```
+
+---
+class: 
+
+# Boas práticas 
+- **Evite referência de caminho que considere seu computador ou usuário:** Faça referência ao caminho do projeto.
+
+- **Exemplo positivo**:
+
+
+```r
+df_titanic &lt;- read_csv("data/titanic.csv")
+```
+
+
+- **Exemplo negativo**:
+
+
+```r
+df_titanic &lt;- read_csv("C:\Users\beatr\Documents\GitHub\2020-R-Ladies-SP-Basico\data/titanic.csv")
+```
+
+
 ---
 class:    
 
 
 # Antes de começar: o projeto
 
-&gt; Ao realizar um projeto, sempre organizar os arquivos em uma **pasta** que conterá todos os arquivos de seu projeto. 
+- Ao realizar um projeto, sempre organizar os arquivos em uma **pasta** que conterá todos os arquivos de seu projeto. 
 
-&gt; Nomear novos arquivos com **nomes descritivos**
+- Nomear novos arquivos com **nomes descritivos**
 
 
 &lt;img src="img/organização_arquivos.png" width="100%" style="display: block; margin: auto;" /&gt;
@@ -574,9 +723,15 @@ class:
 
 # Projetos
 
-&gt; "Um bom layout de projeto facilitará sua vida: ajudará a garantir a integridade de seus dados; facilita o compartilhamento de seu código com outra pessoa (colega de laboratório, colaborador ou /orientador); ele permite que você facilmente faça o upload do seu código com a submissão do seu manuscrito; torna-se mais fácil recuperar o projeto depois de um intervalo. "
+- Um bom layout de projeto facilitará sua vida:
 
-Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+- ajudará a garantir a integridade de seus dados;
+
+- facilita o compartilhamento de seu código com outra pessoa (colega de laboratório, colaborador ou /orientador); 
+
+- ele permite que você facilmente faça o upload do seu código com a submissão do seu manuscrito; torna-se mais fácil recuperar o projeto depois de um intervalo. 
+
+
 
 ---
 class:    
@@ -605,11 +760,11 @@ class:
 
 # Atalhos importantes
 
-Os atalhos facilitam. Veja os principais:&lt;br&gt;&lt;/br&gt;
+Os atalhos facilitam. Veja os principais:
 
-- CTRL + ENTER: roda a linha selecionada no script.&lt;br&gt;&lt;/br&gt;
+- `CTRL + ENTER`: executa a linha selecionada no script.
 
-- ALT + **-**: (&lt;-) sinal de atribuição.&lt;br&gt;&lt;/br&gt;
+- `ALT + **-**`: cria o `&lt;-` - sinal de atribuição.
 
 ---
 class:    
