@@ -2065,18 +2065,6 @@ df_titanic %>%
   summarize(mediana_tarifa = median(tarifa, na.rm = TRUE))
 ```
 
----
-class:
-
-
-# Join
-
-Com o **dplyr** também é possível fazer joins.
-
-<center><img src= "img/dplyr_join.png" style="width: 40%"></center>
-
-[Fonte: @yutannihilation](https://twitter.com/yutannihilation/status/551572539697143808)
-
 
 ---
 class: middle
