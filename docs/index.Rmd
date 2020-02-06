@@ -1874,6 +1874,18 @@ class:
 passageiros_ordenados <- df_titanic %>% arrange(desc(idade), nome)
 passageiros_ordenados
 ```
+---
+class:
+
+#arrange
+
+É possível também usar outras funções dentro do arrange. como `is.na`
+
+```{r}
+# ordenando pelas variáveis que tem muitos campos vazios ou NA (neste caso as variáveis são cabine e idade)
+df_titanic %>% arrange(desc(is.na(idade)),
+                       desc(cabine == ""))
+```
 
 ---
 class:
