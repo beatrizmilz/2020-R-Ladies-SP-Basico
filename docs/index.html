@@ -39,7 +39,7 @@ layout: true
 &lt;a href="https://twitter.com/RLadiesSaoPaulo"&gt;Twitter&lt;/a&gt; | 
 &lt;a href="http://instagram.com/RLadiesSaoPaulo"&gt;Instagram&lt;/a&gt; |
 &lt;a href="http://facebook.com/RLadiesSaoPaulo"&gt;Facebook&lt;/a&gt; |
-&lt;a href="https://github.com/rladies/meetup-presentations_sao-paulo"&gt;Github&lt;/a&gt; |
+&lt;a href="https://github.com/rladies/meetup-presentations_sao-paulo"&gt;GitHub&lt;/a&gt; |
 &lt;a href="http://bit.ly/2020-2-rladies"&gt;bit.ly/2020-2-rladies&lt;/a&gt;
 
 
@@ -203,8 +203,8 @@ class:
 
 Atualizado em: fevereiro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
-<div id="htmlwidget-6609b0be72218a6a7443" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6609b0be72218a6a7443">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["R-Ladies Belo Horizonte","R-Ladies São Paulo","R-Ladies Rio de Janeiro","R-Ladies Niterói","R-Ladies Floripa","R-Ladies Porto Alegre","R-Ladies Curitiba","R-Ladies Salvador","R-Ladies Natal","R-Ladies Recife","R-Ladies Goiânia","R-Ladies Lavras","R-Ladies Manaus","R-Ladies Vitória"],[758,608,465,462,357,313,203,162,140,138,68,23,21,14],[10,15,5,7,7,6,1,4,3,1,1,1,0,0],[0,0,2,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>name<\/th>\n      <th>members<\/th>\n      <th>past_events<\/th>\n      <th>upcoming_events<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-84c3b8fe929b41fdf68f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-84c3b8fe929b41fdf68f">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["R-Ladies Belo Horizonte","R-Ladies São Paulo","R-Ladies Rio de Janeiro","R-Ladies Niterói","R-Ladies Floripa","R-Ladies Porto Alegre","R-Ladies Curitiba","R-Ladies Salvador","R-Ladies Natal","R-Ladies Recife","R-Ladies Goiânia","R-Ladies Lavras","R-Ladies Manaus","R-Ladies Vitória"],[758,608,465,462,357,313,203,162,140,138,68,23,21,14],[10,15,5,7,7,6,1,4,3,1,1,1,0,0],[0,0,2,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>name<\/th>\n      <th>members<\/th>\n      <th>past_events<\/th>\n      <th>upcoming_events<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 class:    
@@ -2328,6 +2328,34 @@ passageiros_ordenados
 ## 10           457 nao             1 Mill~ masc~  65                0
 ## # ... with 881 more rows, and 5 more variables: pais_criancas &lt;dbl&gt;,
 ## #   passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;, embarque &lt;chr&gt;
+```
+---
+class:
+
+#arrange
+
+- É possível também usar outras funções dentro do arrange. como `is.na`
+
+
+```r
+# ordenando pelas variáveis que tem muitos campos vazios ou NA 
+# (neste caso as variáveis são cabine e idade)
+df_titanic %&gt;% arrange(desc(is.na(idade)),
+                       desc(cabine == "")) %&gt;% head()
+```
+
+```
+## # A tibble: 6 x 12
+##   id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge pais_criancas
+##           &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;         &lt;dbl&gt;
+## 1            32 sim             1 Spen~ femi~    NA              1             0
+## 2            56 sim             1 Wool~ masc~    NA              0             0
+## 3           129 sim             3 Pete~ femi~    NA              1             1
+## 4           167 sim             1 Chib~ femi~    NA              0             1
+## 5           186 nao             1 Rood~ masc~    NA              0             0
+## 6           285 nao             1 Smit~ masc~    NA              0             0
+## # ... with 4 more variables: passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;,
+## #   embarque &lt;chr&gt;
 ```
 
 ---

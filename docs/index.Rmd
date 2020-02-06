@@ -26,7 +26,7 @@ layout: true
 <a href="https://twitter.com/RLadiesSaoPaulo">Twitter</a> | 
 <a href="http://instagram.com/RLadiesSaoPaulo">Instagram</a> |
 <a href="http://facebook.com/RLadiesSaoPaulo">Facebook</a> |
-<a href="https://github.com/rladies/meetup-presentations_sao-paulo">Github</a> |
+<a href="https://github.com/rladies/meetup-presentations_sao-paulo">GitHub</a> |
 <a href="http://bit.ly/2020-2-rladies">bit.ly/2020-2-rladies</a>
 
 
@@ -1879,12 +1879,13 @@ class:
 
 #arrange
 
-É possível também usar outras funções dentro do arrange. como `is.na`
+- É possível também usar outras funções dentro do arrange. como `is.na`
 
 ```{r}
-# ordenando pelas variáveis que tem muitos campos vazios ou NA (neste caso as variáveis são cabine e idade)
+# ordenando pelas variáveis que tem muitos campos vazios ou NA 
+# (neste caso as variáveis são cabine e idade)
 df_titanic %>% arrange(desc(is.na(idade)),
-                       desc(cabine == ""))
+                       desc(cabine == "")) %>% head()
 ```
 
 ---
