@@ -124,6 +124,24 @@ knitr::include_graphics("img/rlogos/RCONSORTIUM.png")
 
 
 ---
+class:  
+
+# Apoio
+
+<BR>
+```{r echo=FALSE, fig.cap="<center><b>Curso-R - www.curso-r.com</center></b>", out.width="30%"}
+knitr::include_graphics("img/rlogos/cursor1-41.png")
+```
+
+- Ao final do dia: sorteio de uma vaga no curso ["R para Ciência de Dados I"](https://www.curso-r.com/cursos/r4ds-1/).
+
+- **Bolsas de diversidade:** Para inscrição no processo de seleção, é preciso preencher o formulário.
+
+  - **Workshops:** regressão linear, webscraping I , webscraping II, deploy, e XGBOOST
+http://bit.ly/curso-r-bolsa-w
+
+  - **Cursos:** R para Ciência de Dados I, R para Ciência de Dados II, Introdução a Machine Learning com R, Dashboards com R e Deep learning com R <br> http://bit.ly/curso-r-bolsa-c
+---
 class:   
 
 ## O que é o R-Ladies?
