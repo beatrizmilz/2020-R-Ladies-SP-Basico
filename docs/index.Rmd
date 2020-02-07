@@ -1844,6 +1844,29 @@ df_titanic <- read_csv("data/titanic.csv")
 
 ```
 
+
+---
+class:
+
+# Import Dataset - RStudio
+
+## Importar CSV - From Text (readr)
+- Exemplo: abrindo uma base csv que já está no computador
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("img/gif-importar-csv.gif")
+```
+
+---
+class:
+
+# Import Dataset - RStudio
+
+## Importar excel - From Excel
+- Exemplo: abrindo uma base excel que está online
+```{r, echo=FALSE, out.width="95%"}
+knitr::include_graphics("img/gif-importarexcel.gif")
+```
+Site dos dados do exemplo: [Execução orçamentária PMSP](http://orcamento.sf.prefeitura.sp.gov.br/orcamento/execucao.php)
 ---
 class:
 
