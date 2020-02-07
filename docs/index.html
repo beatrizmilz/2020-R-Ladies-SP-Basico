@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="" xml:lang="">
   <head>
-    <title></title>
-    <meta charset="utf-8">
+    <title>index.utf8</title>
+    <meta charset="utf-8" />
     <meta name="author" content="08/02/2020" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
@@ -222,8 +222,8 @@ class:
 
 Atualizado em: fevereiro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
-<div id="htmlwidget-9a19f05e2ea35098dba3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9a19f05e2ea35098dba3">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["R-Ladies Belo Horizonte","R-Ladies São Paulo","R-Ladies Rio de Janeiro","R-Ladies Niterói","R-Ladies Floripa","R-Ladies Porto Alegre","R-Ladies Curitiba","R-Ladies Salvador","R-Ladies Natal","R-Ladies Recife","R-Ladies Goiânia","R-Ladies Lavras","R-Ladies Manaus","R-Ladies Vitória"],[758,608,465,462,357,313,203,162,140,138,68,23,21,14],[10,15,5,7,7,6,1,4,3,1,1,1,0,0],[0,0,2,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>name<\/th>\n      <th>members<\/th>\n      <th>past_events<\/th>\n      <th>upcoming_events<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e5dfed15010cfeccae59" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e5dfed15010cfeccae59">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["R-Ladies Belo Horizonte","R-Ladies São Paulo","R-Ladies Rio de Janeiro","R-Ladies Niterói","R-Ladies Floripa","R-Ladies Porto Alegre","R-Ladies Curitiba","R-Ladies Salvador","R-Ladies Natal","R-Ladies Recife","R-Ladies Goiânia","R-Ladies Lavras","R-Ladies Manaus","R-Ladies Vitória"],[758,608,465,462,357,313,203,162,140,138,68,23,21,14],[10,15,5,7,7,6,1,4,3,1,1,1,0,0],[0,0,2,0,0,0,0,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>name<\/th>\n      <th>members<\/th>\n      <th>past_events<\/th>\n      <th>upcoming_events<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 class:    
@@ -679,8 +679,7 @@ names(iris)
 ```
 
 ```
-## [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width" 
-## [5] "Species"
+## [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"
 ```
 
 ```r
@@ -689,8 +688,7 @@ names(iris_clean)
 ```
 
 ```
-## [1] "sepal_length" "sepal_width"  "petal_length" "petal_width" 
-## [5] "species"
+## [1] "sepal_length" "sepal_width"  "petal_length" "petal_width"  "species"
 ```
 
 
@@ -779,7 +777,17 @@ class:
 &lt;img src="img/gif-criar-projeto.gif" width="90%" style="display: block; margin: auto;" /&gt;
 
 
+---
+class:
 
+
+# Instruções
+
+- Abrir o `RStudio` no seu computador (ou o RStudio Cloud caso esteja sem RStudio instalado)
+
+- Crie um novo projeto para utilizar durante este curso (caso esteja usando o RStudio Cloud, automaticamente já estará utilizando um projeto) 
+
+- Crie um novo `R` script (file -&gt; new file -&gt; `R` script)
 
 ---
 class:    
@@ -793,16 +801,6 @@ class:
 class: center, middle
 
 ## `R` Básico
-
----
-class:    
-
-
-# Instruções
-
-- Abrir o `RStudio` da sua máquina &lt;br&gt;&lt;/br&gt;
-
-- Abrir um novo `R` script (file -&gt; new file -&gt; `R` script)
 
 ---
 class:    
@@ -1732,8 +1730,7 @@ names(df)
 ```
 
 ```
-## [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width" 
-## [5] "Species"
+## [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"
 ```
 ---
 class:    
@@ -2106,14 +2103,14 @@ class:
 
 
 ```r
-# install.packages("tidyverse")
+install.packages("tidyverse")
 ```
 
 - Via Github: devtools::install_github("nome-do-repo/nome-do-pacote").
 
 
 ```r
-# devtools::install_github("tidyverse/dplyr")
+devtools::install_github("tidyverse/dplyr")
 ```
 
 
@@ -2157,12 +2154,21 @@ class:
 
 Para quem está usando o RStudio instalado no computador:
 
-- Fazer o download do repositório: https://github.com/beatrizmilz/2020-R-Ladies-SP-Basico
+- No seu projeto, crie uma pasta chamada `data`
 
-- Descompactar na pasta Documentos &lt;br&gt;&lt;/br&gt;
+- Fazer o download deste arquivo: [`titanic`](https://raw.githubusercontent.com/beatrizmilz/2020-R-Ladies-SP-Basico/master/docs/data/titanic.csv) ou em [bit.ly/titanic-rladies](http://bit.ly/titanic-rladies)
 
-&lt;img src="img/instrucao_tarde.png" width="80%" style="display: block; margin: auto;" /&gt;
+- Salve este arquivo na pasta `/data`  &lt;br&gt;&lt;/br&gt;
 
+- Instale o pacote `tidyverse`:
+
+
+
+```r
+install.packages("tidyverse")
+```
+
+- OBS: Caso esteja usando RStudio Cloud, não é necessário realizar estes passos, pois já foram feitos anteriormente.
 ---
 class:    
 
@@ -2285,17 +2291,7 @@ class:
 
 &lt;center&gt;&lt;img src="img/S5e27_T.V._typing.gif"&gt;&lt;/center&gt; 
 
----
-class:
 
-
-# Instruções
-
-- Abrir o `RStudio` da sua máquina &lt;br&gt;&lt;/br&gt;
-
-- Abrir o arquivo 2020-R-Ladies-SP-Basico.Rproj &lt;br&gt;&lt;/br&gt;
-
-- Abrir um novo `R` script (file -&gt; new file -&gt; `R` script)
 
 ---
 class:
@@ -2354,18 +2350,18 @@ df_titanic %&gt;% glimpse()
 ```
 ## Observations: 891
 ## Variables: 12
-## $ id_passageiro  &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, ...
-## $ sobreviveu     &lt;chr&gt; "nao", "sim", "sim", "sim", "nao", "nao", "nao"...
-## $ classe         &lt;int&gt; 3, 1, 3, 1, 3, 3, 1, 3, 3, 2, 3, 1, 3, 3, 3, 2,...
-## $ nome           &lt;chr&gt; "Braund, Mr. Owen Harris", "Cumings, Mrs. John ...
-## $ sexo           &lt;chr&gt; "masculino", "feminino", "feminino", "feminino"...
-## $ idade          &lt;dbl&gt; 22, 38, 26, 35, 35, NA, 54, 2, 27, 14, 4, 58, 2...
-## $ irmaos_conjuge &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 3, 0, 1, 1, 0, 0, 1, 0, 0,...
-## $ pais_criancas  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 5, 0, 0,...
-## $ passagem       &lt;chr&gt; "A/5 21171", "PC 17599", "STON/O2. 3101282", "1...
-## $ tarifa         &lt;dbl&gt; 7.2500, 71.2833, 7.9250, 53.1000, 8.0500, 8.458...
-## $ cabine         &lt;chr&gt; NA, "C85", NA, "C123", NA, NA, "E46", NA, NA, N...
-## $ embarque       &lt;chr&gt; "Southampton", "Cherbourg", "Southampton", "Sou...
+## $ id_passageiro  &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1...
+## $ sobreviveu     &lt;chr&gt; "nao", "sim", "sim", "sim", "nao", "nao", "nao", "na...
+## $ classe         &lt;dbl&gt; 3, 1, 3, 1, 3, 3, 1, 3, 3, 2, 3, 1, 3, 3, 3, 2, 3, 2...
+## $ nome           &lt;chr&gt; "Braund, Mr. Owen Harris", "Cumings, Mrs. John Bradl...
+## $ sexo           &lt;chr&gt; "masculino", "feminino", "feminino", "feminino", "ma...
+## $ idade          &lt;dbl&gt; 22, 38, 26, 35, 35, NA, 54, 2, 27, 14, 4, 58, 20, 39...
+## $ irmaos_conjuge &lt;dbl&gt; 1, 1, 0, 1, 0, 0, 0, 3, 0, 1, 1, 0, 0, 1, 0, 0, 4, 0...
+## $ pais_criancas  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 5, 0, 0, 1, 0...
+## $ passagem       &lt;chr&gt; "A/5 21171", "PC 17599", "STON/O2. 3101282", "113803...
+## $ tarifa         &lt;dbl&gt; 7.2500, 71.2833, 7.9250, 53.1000, 8.0500, 8.4583, 51...
+## $ cabine         &lt;chr&gt; NA, "C85", NA, "C123", NA, NA, "E46", NA, NA, NA, "G...
+## $ embarque       &lt;chr&gt; "Southampton", "Cherbourg", "Southampton", "Southamp...
 ```
 
 
@@ -2413,7 +2409,7 @@ df_titanic %&gt;% filter(sobreviveu == "sim") # Seleciona os sobreviventes.
 ```
 ## # A tibble: 342 x 12
 ##    id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge
-##            &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;
+##            &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ##  1             2 sim             1 Cumi~ femi~    38              1
 ##  2             3 sim             3 Heik~ femi~    26              0
 ##  3             4 sim             1 Futr~ femi~    35              1
@@ -2424,7 +2420,7 @@ df_titanic %&gt;% filter(sobreviveu == "sim") # Seleciona os sobreviventes.
 ##  8            16 sim             2 Hewl~ femi~    55              0
 ##  9            18 sim             2 Will~ masc~    NA              0
 ## 10            20 sim             3 Mass~ femi~    NA              0
-## # ... with 332 more rows, and 5 more variables: pais_criancas &lt;int&gt;,
+## # ... with 332 more rows, and 5 more variables: pais_criancas &lt;dbl&gt;,
 ## #   passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;, embarque &lt;chr&gt;
 ```
 
@@ -2526,7 +2522,7 @@ passageiros_ordenados
 ```
 ## # A tibble: 891 x 12
 ##    id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge
-##            &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;
+##            &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ##  1           846 nao             3 Abbi~ masc~    42              0
 ##  2           747 nao             3 Abbo~ masc~    16              1
 ##  3           280 sim             3 Abbo~ femi~    35              1
@@ -2537,7 +2533,7 @@ passageiros_ordenados
 ##  8            41 nao             3 Ahli~ femi~    40              1
 ##  9           856 sim             3 Aks,~ femi~    18              0
 ## 10           208 sim             3 Albi~ masc~    26              0
-## # ... with 881 more rows, and 5 more variables: pais_criancas &lt;int&gt;,
+## # ... with 881 more rows, and 5 more variables: pais_criancas &lt;dbl&gt;,
 ## #   passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;, embarque &lt;chr&gt;
 ```
 
@@ -2559,7 +2555,7 @@ passageiros_ordenados
 ```
 ## # A tibble: 891 x 12
 ##    id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge
-##            &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;
+##            &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ##  1           631 sim             1 Bark~ masc~  80                0
 ##  2           852 nao             3 Sven~ masc~  74                0
 ##  3           494 nao             1 Arta~ masc~  71                0
@@ -2570,7 +2566,7 @@ passageiros_ordenados
 ##  8            34 nao             2 Whea~ masc~  66                0
 ##  9           281 nao             3 Duan~ masc~  65                0
 ## 10           457 nao             1 Mill~ masc~  65                0
-## # ... with 881 more rows, and 5 more variables: pais_criancas &lt;int&gt;,
+## # ... with 881 more rows, and 5 more variables: pais_criancas &lt;dbl&gt;,
 ## #   passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;, embarque &lt;chr&gt;
 ```
 ---
@@ -2590,16 +2586,16 @@ df_titanic %&gt;% arrange(desc(is.na(idade)),
 
 ```
 ## # A tibble: 6 x 12
-##   id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge
-##           &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;
-## 1            32 sim             1 Spen~ femi~    NA              1
-## 2            56 sim             1 Wool~ masc~    NA              0
-## 3           129 sim             3 Pete~ femi~    NA              1
-## 4           167 sim             1 Chib~ femi~    NA              0
-## 5           186 nao             1 Rood~ masc~    NA              0
-## 6           285 nao             1 Smit~ masc~    NA              0
-## # ... with 5 more variables: pais_criancas &lt;int&gt;, passagem &lt;chr&gt;,
-## #   tarifa &lt;dbl&gt;, cabine &lt;chr&gt;, embarque &lt;chr&gt;
+##   id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge pais_criancas
+##           &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;         &lt;dbl&gt;
+## 1            32 sim             1 Spen~ femi~    NA              1             0
+## 2            56 sim             1 Wool~ masc~    NA              0             0
+## 3           129 sim             3 Pete~ femi~    NA              1             1
+## 4           167 sim             1 Chib~ femi~    NA              0             1
+## 5           186 nao             1 Rood~ masc~    NA              0             0
+## 6           285 nao             1 Smit~ masc~    NA              0             0
+## # ... with 4 more variables: passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;,
+## #   embarque &lt;chr&gt;
 ```
 
 ---
@@ -2619,18 +2615,18 @@ df_titanic  %&gt;%
 ```
 ## # A tibble: 109 x 12
 ##    id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge
-##            &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;
-##  1            24 sim             1 Slop~ masc~ 28                 0
-##  2            56 sim             1 Wool~ masc~ NA                 0
-##  3            98 sim             1 Gree~ masc~ 23                 0
+##            &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
+##  1            24 sim             1 "Slo~ masc~ 28                 0
+##  2            56 sim             1 "Woo~ masc~ NA                 0
+##  3            98 sim             1 "Gre~ masc~ 23                 0
 ##  4           188 sim             1 "Rom~ masc~ 45                 0
-##  5           210 sim             1 Blan~ masc~ 40                 0
-##  6           225 sim             1 Hoyt~ masc~ 38                 1
-##  7           249 sim             1 Beck~ masc~ 37                 1
-##  8           299 sim             1 Saal~ masc~ NA                 0
-##  9           306 sim             1 Alli~ masc~  0.92              1
-## 10           371 sim             1 Hard~ masc~ 25                 1
-## # ... with 99 more rows, and 5 more variables: pais_criancas &lt;int&gt;,
+##  5           210 sim             1 "Bla~ masc~ 40                 0
+##  6           225 sim             1 "Hoy~ masc~ 38                 1
+##  7           249 sim             1 "Bec~ masc~ 37                 1
+##  8           299 sim             1 "Saa~ masc~ NA                 0
+##  9           306 sim             1 "All~ masc~  0.92              1
+## 10           371 sim             1 "Har~ masc~ 25                 1
+## # ... with 99 more rows, and 5 more variables: pais_criancas &lt;dbl&gt;,
 ## #   passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;, embarque &lt;chr&gt;
 ```
 
@@ -2682,18 +2678,18 @@ df_titanic %&gt;% select(nome, idade, classe, embarque)
 
 ```
 ## # A tibble: 891 x 4
-##    nome                                            idade classe embarque  
-##    &lt;chr&gt;                                           &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;     
-##  1 Braund, Mr. Owen Harris                            22      3 Southampt~
-##  2 Cumings, Mrs. John Bradley (Florence Briggs Th~    38      1 Cherbourg 
-##  3 Heikkinen, Miss. Laina                             26      3 Southampt~
-##  4 Futrelle, Mrs. Jacques Heath (Lily May Peel)       35      1 Southampt~
-##  5 Allen, Mr. William Henry                           35      3 Southampt~
-##  6 Moran, Mr. James                                   NA      3 Queenstow 
-##  7 McCarthy, Mr. Timothy J                            54      1 Southampt~
-##  8 Palsson, Master. Gosta Leonard                      2      3 Southampt~
-##  9 Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Be~    27      3 Southampt~
-## 10 Nasser, Mrs. Nicholas (Adele Achem)                14      2 Cherbourg 
+##    nome                                                idade classe embarque   
+##    &lt;chr&gt;                                               &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      
+##  1 Braund, Mr. Owen Harris                                22      3 Southampton
+##  2 Cumings, Mrs. John Bradley (Florence Briggs Thayer)    38      1 Cherbourg  
+##  3 Heikkinen, Miss. Laina                                 26      3 Southampton
+##  4 Futrelle, Mrs. Jacques Heath (Lily May Peel)           35      1 Southampton
+##  5 Allen, Mr. William Henry                               35      3 Southampton
+##  6 Moran, Mr. James                                       NA      3 Queenstow  
+##  7 McCarthy, Mr. Timothy J                                54      1 Southampton
+##  8 Palsson, Master. Gosta Leonard                          2      3 Southampton
+##  9 Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)      27      3 Southampton
+## 10 Nasser, Mrs. Nicholas (Adele Achem)                    14      2 Cherbourg  
 ## # ... with 881 more rows
 ```
 
@@ -2724,7 +2720,7 @@ df_titanic %&gt;%  select(starts_with("id"))
 ```
 ## # A tibble: 891 x 2
 ##    id_passageiro idade
-##            &lt;int&gt; &lt;dbl&gt;
+##            &lt;dbl&gt; &lt;dbl&gt;
 ##  1             1    22
 ##  2             2    38
 ##  3             3    26
@@ -2753,20 +2749,19 @@ df_titanic %&gt;%  select(-id_passageiro, -nome)
 
 ```
 ## # A tibble: 891 x 10
-##    sobreviveu classe sexo  idade irmaos_conjuge pais_criancas passagem
-##    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;         &lt;int&gt; &lt;chr&gt;   
-##  1 nao             3 masc~    22              1             0 A/5 211~
-##  2 sim             1 femi~    38              1             0 PC 17599
-##  3 sim             3 femi~    26              0             0 STON/O2~
-##  4 sim             1 femi~    35              1             0 113803  
-##  5 nao             3 masc~    35              0             0 373450  
-##  6 nao             3 masc~    NA              0             0 330877  
-##  7 nao             1 masc~    54              0             0 17463   
-##  8 nao             3 masc~     2              3             1 349909  
-##  9 sim             3 femi~    27              0             2 347742  
-## 10 sim             2 femi~    14              1             0 237736  
-## # ... with 881 more rows, and 3 more variables: tarifa &lt;dbl&gt;,
-## #   cabine &lt;chr&gt;, embarque &lt;chr&gt;
+##    sobreviveu classe sexo  idade irmaos_conjuge pais_criancas passagem tarifa
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;
+##  1 nao             3 masc~    22              1             0 A/5 211~   7.25
+##  2 sim             1 femi~    38              1             0 PC 17599  71.3 
+##  3 sim             3 femi~    26              0             0 STON/O2~   7.92
+##  4 sim             1 femi~    35              1             0 113803    53.1 
+##  5 nao             3 masc~    35              0             0 373450     8.05
+##  6 nao             3 masc~    NA              0             0 330877     8.46
+##  7 nao             1 masc~    54              0             0 17463     51.9 
+##  8 nao             3 masc~     2              3             1 349909    21.1 
+##  9 sim             3 femi~    27              0             2 347742    11.1 
+## 10 sim             2 femi~    14              1             0 237736    30.1 
+## # ... with 881 more rows, and 2 more variables: cabine &lt;chr&gt;, embarque &lt;chr&gt;
 ```
 
 ---
@@ -2842,7 +2837,7 @@ tarifa_conversao
 ```
 ## # A tibble: 891 x 13
 ##    id_passageiro sobreviveu classe nome  sexo  idade irmaos_conjuge
-##            &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;
+##            &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ##  1             1 nao             3 Brau~ masc~    22              1
 ##  2             2 sim             1 Cumi~ femi~    38              1
 ##  3             3 sim             3 Heik~ femi~    26              0
@@ -2853,7 +2848,7 @@ tarifa_conversao
 ##  8             8 nao             3 Pals~ masc~     2              3
 ##  9             9 sim             3 John~ femi~    27              0
 ## 10            10 sim             2 Nass~ femi~    14              1
-## # ... with 881 more rows, and 6 more variables: pais_criancas &lt;int&gt;,
+## # ... with 881 more rows, and 6 more variables: pais_criancas &lt;dbl&gt;,
 ## #   passagem &lt;chr&gt;, tarifa &lt;dbl&gt;, cabine &lt;chr&gt;, embarque &lt;chr&gt;,
 ## #   tarifa_real &lt;dbl&gt;
 ```
@@ -3069,7 +3064,7 @@ df_titanic %&gt;%
 ```
 ## # A tibble: 3 x 2
 ##   classe qtd_classe
-##    &lt;int&gt;      &lt;int&gt;
+##    &lt;dbl&gt;      &lt;int&gt;
 ## 1      1        216
 ## 2      2        184
 ## 3      3        491
@@ -3172,6 +3167,7 @@ class:
 
 - Apresentação feita com [Xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado por [Bea Milz](https://beatrizmilz.com).
     </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
@@ -3181,12 +3177,59 @@ class:
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function() {
-  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
-})();</script>
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <style>
   .logo {
@@ -3218,7 +3261,18 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 
 <script>
 (function() {
-  var i, text, code, codes = document.getElementsByTagName('code');
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
@@ -3232,7 +3286,8 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     i++;
   }
-})();
+};
+slideshow._releaseMath(document);
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

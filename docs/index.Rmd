@@ -821,7 +821,17 @@ knitr::include_graphics("img/gif-criar-projeto.gif")
 ```
 
 
+---
+class:
 
+
+# Instruções
+
+- Abrir o `RStudio` no seu computador (ou o RStudio Cloud caso esteja sem RStudio instalado)
+
+- Crie um novo projeto para utilizar durante este curso (caso esteja usando o RStudio Cloud, automaticamente já estará utilizando um projeto) 
+
+- Crie um novo `R` script (file -> new file -> `R` script)
 
 ---
 class:    
@@ -835,16 +845,6 @@ class:
 class: center, middle
 
 ## `R` Básico
-
----
-class:    
-
-
-# Instruções
-
-- Abrir o `RStudio` da sua máquina <br></br>
-
-- Abrir um novo `R` script (file -> new file -> `R` script)
 
 ---
 class:    
@@ -1644,14 +1644,14 @@ class:
 
 - Via CRAN: install.packages("nome-do-pacote").
 
-```{r, eval=FALSE}
-# install.packages("tidyverse")
+```{r, include=TRUE, eval = FALSE }
+install.packages("tidyverse")
 ```
 
 - Via Github: devtools::install_github("nome-do-repo/nome-do-pacote").
 
-```{r, eval=FALSE}
-# devtools::install_github("tidyverse/dplyr")
+```{r, include=TRUE, eval = FALSE }
+devtools::install_github("tidyverse/dplyr")
 ```
 
 
@@ -1696,14 +1696,20 @@ class:
 
 Para quem está usando o RStudio instalado no computador:
 
-- Fazer o download do repositório: https://github.com/beatrizmilz/2020-R-Ladies-SP-Basico
+- No seu projeto, crie uma pasta chamada `data`
 
-- Descompactar na pasta Documentos <br></br>
+- Fazer o download deste arquivo: [`titanic`](https://raw.githubusercontent.com/beatrizmilz/2020-R-Ladies-SP-Basico/master/docs/data/titanic.csv) ou em [bit.ly/titanic-rladies](http://bit.ly/titanic-rladies)
 
-```{r echo=FALSE, fig.align='center', out.width="80%"}
-knitr::include_graphics("img/instrucao_tarde.png")
+- Salve este arquivo na pasta `/data`  <br></br>
+
+- Instale o pacote `tidyverse`:
+
+
+```{r, include=TRUE, eval = FALSE }
+install.packages("tidyverse")
 ```
 
+- OBS: Caso esteja usando RStudio Cloud, não é necessário realizar estes passos, pois já foram feitos anteriormente.
 ---
 class:    
 
@@ -1830,17 +1836,7 @@ class:
 
 <center><img src="img/S5e27_T.V._typing.gif"></center> 
 
----
-class:
 
-
-# Instruções
-
-- Abrir o `RStudio` da sua máquina <br></br>
-
-- Abrir o arquivo 2020-R-Ladies-SP-Basico.Rproj <br></br>
-
-- Abrir um novo `R` script (file -> new file -> `R` script)
 
 ---
 class:
