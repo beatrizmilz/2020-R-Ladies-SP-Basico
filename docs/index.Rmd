@@ -312,7 +312,7 @@ print('Ola!')
 
 ```
 
-**[Vamos exercitar um pouco?](link jogo)**
+
 
 ---
 class:    
