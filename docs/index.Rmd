@@ -790,34 +790,20 @@ class:
 
 
 # Criando um projeto
-```{r}
+
+
+- Clique na opção **“File”** do menu, e então em **“New Project”**. ->  Clique em **“New Directory”**. -> Clique em **“New Project”**. -> 1.  Escreva o nome do diretório (pasta) onde deseja manter seu projeto, ex. “my_project”. Clique no botão **“Create Project”**.
+
+- OBS: Crie um novo script para escrever seus códigos!
+  **File -> New File -> RScript **
+  
+  
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/gif-criar-projeto.gif") 
 ```
 
-1. Clique na opção **“File”** do menu, e então em **“New Project”**.
-
-1.  Clique em **“New Directory”**.
-
-1.  Clique em **“New Project”**.
-
-1.  Escreva o nome do diretório (pasta) onde deseja manter seu projeto, ex “my_project”.
-
-1.  Clique no botão **“Create Project”**.
 
 
-OBS: Crie um novo script para escrever seus códigos!
-  **File -> New File -> RScript **
-
----
-class:    
-
-
-# Atalhos importantes
-
-Os atalhos facilitam. Veja os principais:
-
-- `CTRL + ENTER`: executa a linha selecionada no script.
-
-- `ALT + **-**`: cria o `<-` - sinal de atribuição.
 
 ---
 class:    
@@ -859,6 +845,10 @@ class:
 
 7 / 5    # divisão
 ```
+
+
+- `CTRL + ENTER`: executa a linha selecionada no script.
+
 
 ---
 class:    
@@ -959,6 +949,9 @@ class:
 - Todas as declarações em `R` onde são criadas variáveis atribuindo-se valores a elas, têm a mesma forma:  
 
 <center><b>nome_da_variável <- valor<b></center>
+
+- Atalho: `ALT + **-**`: cria o `<-` - sinal de atribuição.
+
 
 ---
 class:    
