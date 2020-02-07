@@ -9,7 +9,7 @@ output:
     chakra: libs/remark-latest.min.js
     css: [default, "css/metropolis.css", "css/metropolis-fonts.css", "css/footer.css"]
     includes:
-      after_body: insert-logo.html
+      after_body: html/insert-logo.html
     nature:
       highlightStyle: github
       highlightLines: true
@@ -754,8 +754,8 @@ class:
 - Nomear novos arquivos com **nomes descritivos**
 
 
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/organização_arquivos.png") 
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("img/diretorio-projeto.PNG") 
 ```
 
 ---
