@@ -1021,260 +1021,13 @@ class:
 
 
 # Desafio 2 - Resposta
-2) Usando as variáveis criadas anteriormente, qual o valor do troco que irei receber do pagamento de uma conta de 40,50 reais com meus R$ 60,00 reais?
+2) Quanto receberei de troco, se eu pagar a conta do restaurante com o dinheiro que tenho na carteira? Use as variáveis criadas anteriormente. 
 
 ```{r}
 
 dinheiro - conta
 
 ```
-
----
-class:    
-
-
-# Tipos de variáveis
-
-Os tipos das variáveis são definidos a partir dos valores armazenados nela:
-
-- **Vector**: armazena elementos de mesma classe. <br></br>   
-- **Matrix**: vetores de duas dimensões que armazenam elementos de mesma classe. <br></br>
-- **List**: tipo especial de vetor que aceita elementos de classes diferentes. <br></br>
-- **Data.frame**: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
-
----
-class:    
-
-
-# Exemplo: Vector
-
-A função c() cria um vetor.
-```{r}
-semestre1 <- c("janeiro", "fevereiro", "março", "abril", "maio")
-notas_alunos <- c(5, 6.5, 10, 0.5, 2.75)
-```
-
-É possível realizar operações com vetores.
-
-```{r}
-vetor1 <- 1:5
-vetor1 / 5   # variável vetor1 dividido por 5
-```
-
-```{r}
-vetor2 <- 6:10
-vetor1 * vetor2
-```
-
----
-class:    
-
-
-# Exemplo: Matrix
-
-A função matrix() cria uma matriz.
-```{r}
-primeira_matriz <- matrix(1:8, nrow = 2, ncol = 4)
-primeira_matriz
-```
-
-A função dim() retorna a dimensăo da variável (linha e coluna).
-```{r}
-dim(primeira_matriz)
-```
-
----
-class:    
-
-
-# Exemplo: List
-
-A função list() cria uma lista.
-```{r}
-wizards <- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
-class(wizards)
-```
-
-A função is.list() verifica se a variável é ou não uma lista.
-
-```{r}
-harry_friends <- c("Hermione Granger", "Rony Weasley")
-class(harry_friends)
-is.list(harry_friends)
-```
-
----
-class:    
-
-
-# Exemplo: Data.frame
-
-
-A função head() mostra as primeiras 6 linhas do dataframe.
-```{r}
-data(iris)
-
-df <- iris
-
-head(df)
-```
-
----
-class:    
-
-
-# Funções úteis 
-
-##Para trabalhar com dataframes
-
-- `tail()`: mostra as últimas 6 linhas.
-
-- `names()`: mostra os nomes das colunas.
-
-- `View()`: mostra o dataframe.
-
----
-class:    
-
-
-# Desafio 3
-
-1) Quantas observações tem o data.frame iris?<br></br>
-2) Quais são as variáveis do data.frame iris?<br></br>
-3) Visualize o dataframe iris.
-
----
-class:    
-
-
-# Desafio 3 - Resposta
-
-1) Quantas observações tem o data.frame iris?<br></br>
-```{r}
-tail(df)
-```
-2) Quais são as variáveis do data.frame iris?
-
-```{r}
-names(df)
-```
----
-class:    
-
-
-# Desafio 3 - Resposta
-
-3) Visualize o dataframe iris.
-```{r eval=FALSE}
-View(df)
-```
-
-```{r echo=FALSE, fig.align='center', out.width="75%"}
-knitr::include_graphics("img/View_iris.png")
-```
-
----
-class:    
-
-
-# Índices 
-
-A contagem de um índice incia-se no número 1<br></br>
-
-*Vetores*: característica linear
-
-```{r}
-v <- c(10:25)
-
-v[2]
-```
-
-*Data Frames*: o primeiro número indica a linha (observação) e o segundo a coluna (variável)
-
-```{r}
-df[145, 2]
-```
-
----
-class:    
-
-
-# NA
-
-Uma característica importante do `R` que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
-
-**NA** representa um valor desconhecido. 
-
----
-class:    
-
-
-# NA
-
-Quase toda operação envolvendo um valor desconhecido também será desconhecido:
-
-```{r}
-NA > 10
-10 == NA
-NA + 10
-NA / 2
-```
-
----
-class:    
-
-# NA
-
-E o mais confuso:
-
-```{r}
-NA == NA
-```
-
-<br></br>
-
-**is.na()** é a função que testa se uma variável é NA.
-
----
-class:    
-
-
-# Desafio 4
-
-1) No data.frame iris, testar se o Petal.Lenght da 5ª observação é igual ao da 6ª observação. E se o Petal.Lenght da 5ª observação é igual ao da 7ª observação.<br></br>
-
-
-2) A 10ª observação tem Petal.Width maior ou menor que a seguinte (11ª)? 
-E qual é a espécie da menor?
-
----
-class:    
-
-
-# Desafio 4 - Resposta
-
-1) No data.frame iris, testar se o Petal.Lenght da 5ª observação é igual ao da 6ª observação. E se o Petal.Lenght da 5ª observação é igual ao da 7ª observação.
-
-```{r}
-df[5,3] == df[6,3]
-df[5,3] == df[7,3]
-```
-
----
-class:    
-
-
-# Desafio 4 - Resposta
-
-2) A 10ª observação tem Petal.Width maior ou menor que a seguinte (11a)? 
-E qual é a espécie da menor?
-
-```{r}
-df[10,4] < df[11,4] # Petal.Width da 10ª linha é menor que da 11ª
-
-df[10,5]
-```
-
 
 ---
 class:    
@@ -1456,7 +1209,7 @@ class(vetor_logical)
 class:    
 
 
-# Desafio 5
+# Desafio 3
 
 Converta a variável Conta criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor? Como explica o que aconteceu?
 
@@ -1464,7 +1217,23 @@ Converta a variável Conta criada anteriormente para character. Agora cheque sua
 class:    
 
 
-# Desafio 5 - Resposta
+# Desafio 3 - Resposta
+
+Converta a variável Conta criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor? 
+
+```{r}
+conta
+```
+
+```{r}
+as.character(conta)
+```
+
+---
+class:    
+
+
+# Desafio 3 - Resposta
 
 Converta a variável Conta criada anteriormente para character. Agora cheque sua classe. O que acontece com seu valor? 
 
@@ -1475,6 +1244,362 @@ class(conta)
 
 ```{r}
 as.character(conta)
+```
+```{r include=FALSE}
+conta <-  as.character(conta)
+```
+
+```{r}
+class(conta)
+```
+---
+class:    
+
+
+# Tipos de variáveis
+
+Os tipos das variáveis são definidos a partir dos valores armazenados nela:
+
+- **Vector**: armazena elementos de mesma classe. <br></br>   
+- **Matrix**: vetores de duas dimensões que armazenam elementos de mesma classe. <br></br>
+- **List**: tipo especial de vetor que aceita elementos de classes diferentes. <br></br>
+- **Data.frame**: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
+
+---
+class:    
+
+
+# Exemplo: Vector
+
+A função c() cria um vetor.
+```{r}
+semestre1 <- c("janeiro", "fevereiro", "março", "abril", "maio")
+notas_alunos <- c(5, 6.5, 10, 0.5, 2.75)
+```
+
+É possível realizar operações com vetores.
+
+```{r}
+vetor1 <- 1:5
+vetor1 / 5   # variável vetor1 dividido por 5
+```
+
+```{r}
+vetor2 <- 6:10
+vetor1 * vetor2
+```
+
+---
+class:    
+
+
+# Exemplo: Matrix
+
+A função matrix() cria uma matriz.
+```{r}
+primeira_matriz <- matrix(1:8, nrow = 2, ncol = 4)
+primeira_matriz
+```
+
+A função dim() retorna a dimensăo da variável (linha e coluna).
+```{r}
+dim(primeira_matriz)
+```
+
+---
+class:    
+
+
+# Exemplo: List
+
+A função list() cria uma lista.
+```{r}
+wizards <- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
+class(wizards)
+```
+
+A função is.list() verifica se a variável é ou não uma lista.
+
+```{r}
+harry_friends <- c("Hermione Granger", "Rony Weasley")
+class(harry_friends)
+is.list(harry_friends)
+```
+
+---
+class:    
+
+
+# Exemplo: Data.frame
+
+
+A função head() mostra as primeiras 6 linhas do dataframe.
+```{r}
+data(iris)
+
+df <- iris
+
+head(df)
+```
+
+---
+class:    
+
+
+# Funções úteis 
+
+##Para trabalhar com dataframes
+
+- `tail()`: mostra as últimas 6 linhas.
+
+- `names()`: mostra os nomes das colunas.
+
+- `View()`: mostra o dataframe.
+
+---
+class:    
+
+
+# Desafio 4
+
+1) Quantas observações tem o data.frame iris?<br></br>
+2) Quais são as variáveis do data.frame iris?<br></br>
+3) Visualize o dataframe iris.
+
+---
+class:    
+
+
+# Desafio 4 - Resposta
+
+1) Quantas observações tem o data.frame iris?<br></br>
+```{r}
+tail(df)
+```
+2) Quais são as variáveis do data.frame iris?
+
+```{r}
+names(df)
+```
+---
+class:    
+
+
+# Desafio 4 - Resposta
+
+3) Visualize o dataframe iris.
+```{r eval=FALSE}
+View(df)
+```
+
+```{r echo=FALSE, fig.align='center', out.width="75%"}
+knitr::include_graphics("img/View_iris.png")
+```
+
+---
+class:
+
+
+# Operadores Relacionais
+- Igual a: **==** <br></br> 
+- Diferente de: **!=** <br></br>
+- Maior que: **>** <br></br>
+- Maior ou igual: **>=** <br></br>
+- Menor que: **<** <br></br>
+- Menor ou igual: **<=** <br></br>
+
+---
+class:    
+
+
+# Operadores Relacionais
+
+Exemplos de **==**:
+```{r}
+TRUE == TRUE
+
+TRUE == FALSE
+```
+---
+class:    
+
+
+# Operadores Relacionais
+
+Exemplos de **!=**:
+```{r}
+TRUE != TRUE
+
+TRUE != FALSE
+```
+---
+class:
+
+# Operadores Relacionais
+
+Exemplos de **<**, **>=** e **>**:
+
+```{r}
+3 < 5
+
+10 >= 10
+
+10 > 10
+```
+
+---
+class:
+
+
+# Operadores Lógicos
+
+- E: **&** <br></br>
+Será verdadeiro se os dois forem TRUE 
+
+```{r}
+x <- 5
+
+ x >= 3 & x <=7
+```
+```{r}
+y <- 2
+
+ y >= 3 & y <= 7
+```
+---
+class:
+
+
+# Operadores Lógicos
+
+- OU: **|**<br></br>
+Será verdadeiro se um dos dois forem TRUE
+
+```{r}
+y <- 2
+
+ y >= 3 | y <=7
+```
+
+```{r}
+y <- 1
+
+ y >= 3 | y == 0
+```
+---
+class:
+
+
+# Operadores Lógicos
+
+- Negação: **!** <br></br>
+
+```{r}
+(!x < 4)
+```
+
+---
+class:
+
+
+# NA
+
+Uma característica importante do R que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
+
+**NA** representa um valor desconhecido. 
+
+---
+class:
+
+
+# NA
+
+Quase qualquer operação envolvendo um valor desconhecido também será desconhecido:
+
+```{r}
+NA > 10
+10 == NA
+NA + 10
+NA / 2
+```
+
+---
+class:
+
+
+# NA
+
+E o mais confuso:
+
+```{r}
+NA == NA
+```
+
+<br></br>
+
+**is.na()** é a função que testa se uma variável é NA.
+
+---
+class:    
+
+
+# Índices 
+
+- Indicam a posição do elemento na variável.<br><br>
+- Inicia-se a contagem do índice pela posição do primeiro elemento da variável, ou seja, pelo número 1.<br><br>
+
+*Vetores*: característica linear
+
+```{r}
+v <- c(10:25)
+
+v[2]
+```
+
+*Data Frames*: o primeiro número indica a linha (observação) e o segundo a coluna (variável)
+
+```{r}
+df[145, 2]
+```
+
+---
+class:    
+
+
+# Desafio 5
+
+1) No data.frame iris, testar se o Petal.Lenght da 5ª observação é igual ao da 6ª observação. E se o Petal.Lenght da 5ª observação é igual ao da 7ª observação.<br></br>
+
+
+2) A 10ª observação tem Petal.Width maior ou menor que a seguinte (11ª)? 
+E qual é a espécie da menor?
+
+---
+class:    
+
+
+# Desafio 5 - Resposta
+
+1) No data.frame iris, testar se o Petal.Lenght da 5ª observação é igual ao da 6ª observação. E se o Petal.Lenght da 5ª observação é igual ao da 7ª observação.
+
+```{r}
+df[5,3] == df[6,3]
+df[5,3] == df[7,3]
+```
+
+---
+class:    
+
+
+# Desafio 5 - Resposta
+
+2) A 10ª observação tem Petal.Width maior ou menor que a seguinte (11a)? 
+E qual é a espécie da menor?
+
+```{r}
+df[10,4] < df[11,4] # Petal.Width da 10ª linha é menor que da 11ª
+
+df[10,5]
 ```
 
 ---
