@@ -287,6 +287,17 @@ knitr::include_graphics("img/drone-arduino-e1469058606329-600.webp")
 ```
 
 ---
+class:
+
+
+# O primeiro algoritmo
+
+Foi desenvolvido no século XIX pela matemática e escritora inglesa Ada Lovelace.
+ 
+```{r echo=FALSE, fig.align='center', out.width="50%"}
+knitr::include_graphics("img/ada_lovelace.jpeg")
+``` 
+---
 class:    
 
 
@@ -301,7 +312,7 @@ print('Ola!')
 
 ```
 
-**[Vamos exercitar um pouco?](link jogo)**
+
 
 ---
 class:    
