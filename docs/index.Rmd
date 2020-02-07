@@ -1560,7 +1560,7 @@ v <- c(10:25)
 v[2]
 ```
 
-*Data Frames*: o primeiro número indica a linha (observação) e o segundo a coluna (variável)
+*Data Frames*: o primeiro número indica a linha (observação) e o segundo a coluna (variável).
 
 ```{r}
 df[145, 2]
@@ -1820,7 +1820,7 @@ class:
 
 - Abrir o `RStudio` da sua máquina <br></br>
 
-- Abrir o arquivo oficina_R_basico.Rproj <br></br>
+- Abrir o arquivo 2020-R-Ladies-SP-Basico.Rproj <br></br>
 
 - Abrir um novo `R` script (file -> new file -> `R` script)
 
