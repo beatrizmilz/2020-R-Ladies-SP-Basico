@@ -948,6 +948,7 @@ class:
 
 - Para reutilizar essas informações ao longo do script utilizamos o que chamamos de **objeto**
 
+- Um objeto retém e representa um valor ou expressão
 
 ```{r echo=FALSE, fig.align='center', out.width="40%"}
 knitr::include_graphics("img/ran.jpg")
