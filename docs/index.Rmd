@@ -89,7 +89,7 @@ class:
 
 - Boas Práticas de Programação
 
-- Fundamentos de R
+- R Básico
 
 ---
 class:
@@ -1324,7 +1324,7 @@ primeira_matriz <- matrix(1:8, nrow = 2, ncol = 4)
 primeira_matriz
 ```
 
-A função dim() retorna a dimensăo da variável (linha e coluna).
+A função dim() retorna a dimensão do objeto (linha e coluna).
 ```{r}
 dim(primeira_matriz)
 ```
@@ -1341,7 +1341,7 @@ wizards <- list("Harry Potter", 18, TRUE, c("Hermione Granger", "Rony Weasley"))
 class(wizards)
 ```
 
-A função is.list() verifica se a variável é ou não uma lista.
+A função is.list() verifica se o objeto é ou não uma lista.
 
 ```{r}
 harry_friends <- c("Hermione Granger", "Rony Weasley")
