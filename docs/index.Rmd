@@ -1565,7 +1565,7 @@ NA == NA
 
 <br></br>
 
-**is.na()** é a função que testa se uma variável é NA.
+**is.na()** é a função que testa se um objeto é NA.
 
 ---
 class:    
@@ -1573,8 +1573,8 @@ class:
 
 # Índices 
 
-- Indicam a posição do elemento na variável.<br><br>
-- Inicia-se a contagem do índice pela posição do primeiro elemento da variável, ou seja, pelo número 1.<br><br>
+- Indicam a posição do elemento no objeto.<br><br>
+- Inicia-se a contagem do índice pela posição do primeiro elemento do objeto, ou seja, pelo número 1.<br><br>
 
 *Vetores*: característica linear
 
